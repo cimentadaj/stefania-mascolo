@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor</title>
+<meta name="description" content="Stefania Mascolo helps leadership teams see clearly what isn't working inside their organisation, and builds the skills, habits and trust needed to change it. Change management, capacity development and leadership training.">
+<meta property="og:title" content="Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor">
+<meta property="og:description" content="An honest, independent view of what is holding your organisation back, and a structured path to change it.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/brush.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette taken from "Service Overview ENG.pdf" */
+    --red: #d32f2f;        /* brush-circle red */
+    --blush: #e89494;      /* gradient pink */
+    --blush-soft: #f3d3d2;
+    --blush-mist: #fbf1f0;
+    --ink: #141010;        /* headings / text */
+    --brown: #4a3534;      /* wordmark brown */
+    --muted: #5d5150;
+    --warm: #f9f7f6;       /* card background */
+    --line: #ecdfdd;
+    --paper: #ffffff;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --wrap: 1120px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: 1.125rem; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; }
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  section { padding: clamp(72px, 10vw, 128px) 0; position: relative; }
+  .eyebrow {
+    font-size: .8rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 18px; display: block;
+  }
+  .rule { display: block; width: 120px; height: 3px; background: var(--ink); margin: 22px 0 0; }
+  .section-head { margin-bottom: clamp(40px, 6vw, 64px); max-width: 720px; }
+  .section-head h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+  .section-head p { color: var(--muted); margin-top: 22px; font-size: 1.15rem; }
+
+  /* Placeholders: visibly marked, to be replaced */
+  .ph {
+    border: 1.5px dashed var(--blush); background: repeating-linear-gradient(135deg, var(--blush-mist) 0 14px, #fff 14px 28px);
+    color: var(--brown); display: flex; align-items: center; justify-content: center; text-align: center;
+    font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; padding: 20px; line-height: 1.5;
+  }
+
+  /* Header */
+  header.top {
+    position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.86);
+    backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid transparent; transition: border-color .3s;
+  }
+  header.top.scrolled { border-bottom-color: var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 2px; text-decoration: none; color: var(--brown); font-weight: 600; font-size: 1.3rem; letter-spacing: -.01em; }
+  .brand img { width: 46px; height: 46px; margin-right: -22px; position: relative; top: -2px; }
+  .brand span { position: relative; }
+  .nav ul { list-style: none; display: flex; align-items: center; gap: 34px; margin: 0; padding: 0; }
+  .nav ul a { text-decoration: none; font-size: .98rem; color: var(--ink); position: relative; }
+  .nav ul a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .nav ul a:not(.btn):hover::after { transform: scaleX(1); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--serif);
+    background: var(--ink); color: #fff; padding: 14px 26px; font-size: 1rem; border: 1.5px solid var(--ink);
+    transition: background .25s, color .25s, border-color .25s;
+  }
+  .btn:hover { background: var(--red); border-color: var(--red); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .nav ul a.btn { padding: 10px 20px; font-size: .95rem; color: #fff; }
+  @media (max-width: 860px) { .nav ul li:not(.cta) { display: none; } }
+
+  /* Hero */
+  .hero {
+    padding: clamp(56px, 8vw, 104px) 0 clamp(72px, 9vw, 120px); overflow: hidden;
+    background:
+      radial-gradient(circle at -5% -10%, rgba(232,148,148,.55), rgba(232,148,148,0) 38%),
+      radial-gradient(circle at 105% 105%, rgba(232,148,148,.6), rgba(232,148,148,0) 34%),
+      linear-gradient(115deg, var(--blush-mist) 0%, #fff 45%, #fff 70%, var(--blush-mist) 100%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .hero .name { font-weight: 400; letter-spacing: .14em; text-transform: uppercase; font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--brown); margin-bottom: 26px; }
+  .hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.3rem); line-height: 1.08; }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--red); }
+  .hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--muted); max-width: 560px; margin: 30px 0 40px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .portrait { position: relative; width: min(100%, 420px); aspect-ratio: 1; margin-left: auto; }
+  .portrait .ph { position: absolute; inset: 9%; border-radius: 50%; }
+  .portrait .ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-12deg); pointer-events: none; }
+  .facts { display: flex; flex-wrap: wrap; gap: 14px 38px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); font-size: .98rem; color: var(--muted); }
+  .facts b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .portrait { order: -1; width: min(72vw, 300px); margin: 0 auto 8px; }
+  }
+
+  /* Statement */
+  .statement { background: var(--ink); color: #fff; overflow: hidden; }
+  .statement .bg-ring { position: absolute; width: 560px; right: -160px; top: -120px; opacity: .22; pointer-events: none; }
+  .statement blockquote { margin: 0; max-width: 900px; position: relative; }
+  .statement blockquote p { font-size: clamp(1.6rem, 3.4vw, 2.5rem); line-height: 1.3; font-style: italic; font-weight: 400; margin: 0; }
+  .statement blockquote p strong { font-style: normal; font-weight: 700; color: var(--blush); }
+  .statement .follow { margin-top: 40px; max-width: 680px; color: #d9cfcd; font-size: 1.15rem; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+  .about-media { position: sticky; top: 110px; }
+  .about-media .ph { aspect-ratio: 4 / 5; }
+  .about-copy h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+  .about-copy .body { margin-top: 34px; color: #2b2323; }
+  .about-copy .body p:first-child { font-size: 1.28rem; color: var(--ink); }
+  .langs { display: inline-block; margin-top: 8px; padding: 10px 18px; background: var(--warm); border-left: 3px solid var(--red); font-size: 1rem; }
+  .timeline { margin-top: 44px; border-top: 1px solid var(--line); }
+  .timeline h3 { font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: var(--red); font-weight: 600; margin: 26px 0 8px; }
+  .timeline ol { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
+  .timeline li span { color: var(--muted); font-variant-numeric: lining-nums; }
+  .timeline li b { font-weight: 600; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-media { position: static; } .about-media .ph { aspect-ratio: 4 / 3; } }
+
+  /* Principles */
+  .principles { background: var(--warm); }
+  .p-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 3px solid var(--ink); }
+  .p-item { padding: 32px 28px 8px 0; }
+  .p-item + .p-item { padding-left: 28px; border-left: 1px solid var(--line); }
+  .p-item .n { color: var(--red); font-size: .95rem; font-weight: 600; letter-spacing: .1em; }
+  .p-item h3 { font-size: 1.35rem; margin: 12px 0 14px; }
+  .p-item p { font-size: 1rem; color: var(--muted); }
+  @media (max-width: 960px) { .p-grid { grid-template-columns: 1fr 1fr; } .p-item:nth-child(3) { padding-left: 0; border-left: 0; } }
+  @media (max-width: 560px) { .p-grid { grid-template-columns: 1fr; } .p-item, .p-item + .p-item { padding: 28px 0 4px; border-left: 0; border-top: 1px solid var(--line); } .p-item:first-child { border-top: 0; } }
+
+  /* Services */
+  .s-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 2px solid var(--line); }
+  .s-item { background: #fff; padding: 40px 34px 34px; transition: background .3s; position: relative; }
+  .s-item:hover { background: var(--blush-mist); }
+  .s-item .n { font-size: 2.6rem; font-weight: 400; color: var(--blush); line-height: 1; }
+  .s-item h3 { font-size: 1.4rem; margin: 22px 0 14px; }
+  .s-item p { font-size: 1rem; color: var(--muted); margin: 0; }
+  .s-item ul { margin: 16px 0 0; padding: 0; list-style: none; font-size: .95rem; }
+  .s-item li { padding: 4px 0 4px 18px; position: relative; }
+  .s-item li::before { content: ""; position: absolute; left: 0; top: .85em; width: 8px; height: 1.5px; background: var(--red); }
+  .formats { margin-top: 30px; color: var(--muted); font-size: 1rem; }
+  @media (max-width: 960px) { .s-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .s-grid { grid-template-columns: 1fr; } .s-item { padding: 32px 24px 28px; } }
+
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; }
+  .step { position: relative; padding-top: 30px; border-top: 1.5px solid var(--ink); }
+  .step::before { counter-increment: step; content: "0" counter(step); position: absolute; top: -13px; left: 0; background: #fff; padding-right: 12px; color: var(--red); font-weight: 600; font-size: .95rem; letter-spacing: .1em; }
+  .step h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  .step p { font-size: 1rem; color: var(--muted); }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 44px; } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Insights */
+  .insights { background:
+      radial-gradient(circle at 100% 0%, rgba(232,148,148,.45), rgba(232,148,148,0) 40%),
+      radial-gradient(circle at 0% 100%, rgba(232,148,148,.35), rgba(232,148,148,0) 35%), var(--blush-mist); }
+  .i-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+  .i-grid h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+  .i-grid .tag { font-size: 1.2rem; font-style: italic; color: var(--red); margin-top: 14px; }
+  .i-grid .copy p { color: #2b2323; }
+  .i-grid .ph { aspect-ratio: 16 / 10; }
+  @media (max-width: 860px) { .i-grid { grid-template-columns: 1fr; } }
+
+  /* Testimonials */
+  .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .t-item { margin: 0; padding: 40px 36px; background: var(--warm); position: relative; }
+  .t-item::before { content: "\201C"; position: absolute; top: 6px; left: 26px; font-size: 5rem; line-height: 1; color: var(--blush); }
+  .t-item blockquote { margin: 26px 0 22px; font-size: 1.15rem; font-style: italic; }
+  .t-item figcaption { font-size: .95rem; color: var(--muted); }
+  .t-item.ph { flex-direction: column; text-transform: none; letter-spacing: 0; font-size: 1rem; align-items: flex-start; text-align: left; border-radius: 0; }
+  .t-item.ph::before { content: none; }
+  .t-item.ph b { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 600; margin-bottom: 10px; }
+  @media (max-width: 760px) { .t-grid { grid-template-columns: 1fr; } }
+
+  /* Logos */
+  .worked { padding-top: 0; }
+  .worked .label { text-align: center; font-size: .8rem; letter-spacing: .4em; text-transform: uppercase; color: var(--muted); margin-bottom: 44px; }
+  .logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px 18px; align-items: center; list-style: none; padding: 0; margin: 0; }
+  .logos li { height: 92px; display: flex; align-items: center; justify-content: center; padding: 10px 12px; }
+  .logos img { max-height: 54px; max-width: 150px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s; }
+  .logos li:hover img { filter: none; opacity: 1; }
+  .logos .txt { font-size: .95rem; font-weight: 600; text-align: center; color: var(--muted); line-height: 1.25; }
+  @media (max-width: 900px) { .logos { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 520px) { .logos { grid-template-columns: repeat(2, 1fr); } .logos li { height: 80px; } .logos img { max-height: 44px; max-width: 128px; } }
+
+  /* Contact */
+  .contact { background: var(--ink); color: #fff; overflow: hidden; text-align: center; }
+  .contact .bg-ring { position: absolute; width: 620px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(18deg); opacity: .16; pointer-events: none; }
+  .contact .inner { position: relative; max-width: 760px; margin: 0 auto; }
+  .contact h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); }
+  .contact p { color: #d9cfcd; margin: 24px auto 40px; max-width: 560px; font-size: 1.15rem; }
+  .contact .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .contact .btn { background: #fff; color: var(--ink); border-color: #fff; }
+  .contact .btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+  .contact .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.5); }
+  .contact .btn.ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }
+  .contact .mail { margin-top: 30px; font-size: 1rem; color: #bfb3b1; }
+  .contact .mail a { color: #fff; }
+  footer { background: var(--ink); color: #9c908e; font-size: .9rem; border-top: 1px solid #2c2424; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 26px; padding-bottom: 26px; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Stefania Mascolo, home"><img src="assets/brush.svg" alt=""><span>Stefania Mascolo</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li class="cta"><a class="btn" href="#contact">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="name">Stefania Mascolo</div>
+        <h1>An honest outside view of what is <em>holding your organisation back.</em></h1>
+        <p class="lede">I work with CEOs and leadership teams to bring to light what isn't working, in processes, collaboration and leadership, and to build the skills and habits that turn strategy into lasting results.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Start a confidential conversation</a>
+          <a class="btn ghost" href="#services">Services</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <!-- PLACEHOLDER: replace with <img src="assets/portrait.jpg" alt="Stefania Mascolo"> styled with border-radius:50% -->
+        <div class="ph">Portrait photo<br>square · ≥ 1000 px</div>
+        <img class="ring" src="assets/brush.svg" alt="">
+      </div>
+    </div>
+    <div class="facts">
+      <div><b>Senior Consultant</b> &amp; Capacity Development Advisor</div>
+      <div><b>10 years</b> of international experience</div>
+      <div><b>Companies</b> &amp; public administrations</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <img class="bg-ring" src="assets/brush.svg" alt="">
+  <div class="wrap">
+    <blockquote class="reveal">
+      <p>“If there's one thing I've learned from working with people and organisations over the past decade, it's that <strong>great strategies alone don't create impact.</strong>”</p>
+    </blockquote>
+    <p class="follow reveal">My role is to bridge that gap: helping organisations turn a shared vision into coordinated action, build effective partnerships, and develop the skills their people and teams need to deliver lasting results, while finding fulfilment in their work.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <!-- PLACEHOLDER: replace with <img src="assets/workshop.jpg" alt="Stefania facilitating a workshop"> -->
+      <div class="ph">Photo · Stefania facilitating a workshop or session<br>portrait 4:5 · ≥ 1200 px tall</div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">About</span>
+      <h2>Bridging strategy and the people who deliver it</h2>
+      <span class="rule"></span>
+      <div class="body">
+        <p>Stefania Mascolo is a consultant with ten years of international experience in strategic consulting, capability development and the coordination of organisational change.</p>
+        <p>She works alongside companies and public administrations to identify the skills that need developing and to build tailored capacity-building programmes, taking care of their design, delivery and the evaluation of results.</p>
+        <p>She designs and leads corporate training in transversal and managerial skills, in particular negotiation, effective communication, leadership and collaboration. She also facilitates experiential workshops, team-building events and debriefing sessions, using participatory methods such as storytelling, gamification and group exercises to open honest dialogue, recognise and improve individual and team dynamics, and face the challenges of organisational change.</p>
+        <p>Her approach combines consulting rigour with close attention to relational dynamics. The aim is always the same: translate organisational needs into learning paths and new behavioural habits that people apply in their everyday work.</p>
+        <span class="langs">Works in Italian, English and Spanish</span>
+      </div>
+      <div class="timeline">
+        <h3>Selected experience</h3>
+        <ol>
+          <li><span>2026 – now</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milan</div></li>
+          <li><span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Brussels</div></li>
+          <li><span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcelona</div></li>
+          <li><span>2020 – 2022</span><div><b>Professor</b>, UNITAR Master's in International Affairs · Universitat Oberta de Catalunya</div></li>
+          <li><span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · United Nations Association of Spain, Barcelona</div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How I work</span>
+      <h2>Trust is the precondition for change</h2>
+      <span class="rule"></span>
+      <p>Assessing an organisation means hearing what people don't usually say out loud. That only works when everyone involved knows how the information will be handled.</p>
+    </div>
+    <div class="p-grid reveal">
+      <div class="p-item">
+        <span class="n">01</span>
+        <h3>Confidential by default</h3>
+        <p>What emerges in interviews and workshops is handled with discretion. Findings are reported at the level agreed at the outset, never attributed to individuals without consent.</p>
+      </div>
+      <div class="p-item">
+        <span class="n">02</span>
+        <h3>Independent and candid</h3>
+        <p>Leadership receives a clear, evidence-based picture, including what is uncomfortable. The focus is on systems and behaviours, not on blame.</p>
+      </div>
+      <div class="p-item">
+        <span class="n">03</span>
+        <h3>Built with your people</h3>
+        <p>Solutions are designed together with the teams who will live them, so change is owned and not imposed.</p>
+      </div>
+      <div class="p-item">
+        <span class="n">04</span>
+        <h3>Measured results</h3>
+        <p>Every engagement starts with clear objectives and ends with an evaluation of what has actually changed in day-to-day work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>From diagnosis to new ways of working</h2>
+      <span class="rule"></span>
+      <p>Every engagement is tailored to your organisation, your team and your priorities. Delivered in person, online or hybrid.</p>
+    </div>
+    <div class="s-grid reveal">
+      <article class="s-item">
+        <div class="n">01</div>
+        <h3>Organisational Assessment</h3>
+        <p>An independent diagnosis of what is and isn't working, for leadership teams who want the full picture before deciding where to act.</p>
+        <ul><li>Needs and barrier analysis</li><li>Interviews and team observation</li><li>Clear findings and priorities</li></ul>
+      </article>
+      <article class="s-item">
+        <div class="n">02</div>
+        <h3>Change Management &amp; Adoption</h3>
+        <p>Guiding teams through the adoption of new processes, methodologies, tools and ways of collaborating.</p>
+        <ul><li>Stakeholder engagement</li><li>Change enablement</li><li>Adoption roadmaps</li></ul>
+      </article>
+      <article class="s-item">
+        <div class="n">03</div>
+        <h3>Leadership &amp; Management Training</h3>
+        <p>Training programmes for managers and teams on the skills that shape day-to-day performance.</p>
+        <ul><li>Negotiation</li><li>Effective communication</li><li>Leadership and collaboration</li></ul>
+      </article>
+      <article class="s-item">
+        <div class="n">04</div>
+        <h3>Experiential Workshops &amp; Team Building</h3>
+        <p>Participatory sessions that surface team dynamics and turn them into shared commitments.</p>
+        <ul><li>Storytelling and gamification</li><li>Simulations and group exercises</li><li>Debriefing sessions</li></ul>
+      </article>
+      <article class="s-item">
+        <div class="n">05</div>
+        <h3>Capacity-Building Programmes</h3>
+        <p>End-to-end learning design, from needs analysis and objectives to delivery and evaluation of results.</p>
+        <ul><li>Macro- and micro-design</li><li>Methodologies and learning tools</li><li>Impact evaluation</li></ul>
+      </article>
+      <article class="s-item">
+        <div class="n">06</div>
+        <h3>Partnerships &amp; Complex Programmes</h3>
+        <p>Structuring multi-stakeholder and EU-funded programmes so that partners stay aligned and delivery stays high quality.</p>
+        <ul><li>Programme architecture</li><li>Stakeholder coordination</li><li>Monitoring and reporting</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Approach</span>
+      <h2>A clear path, end to end</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><h3>Listen &amp; assess</h3><p>Understand the organisation, its goals and the barriers in the way, through conversations at every level.</p></div>
+      <div class="step"><h3>Design</h3><p>Define the skills to develop and build a tailored programme around your team and priorities.</p></div>
+      <div class="step"><h3>Deliver</h3><p>Training, workshops and facilitation that put people at the centre and make change practical.</p></div>
+      <div class="step"><h3>Evaluate &amp; embed</h3><p>Measure results and turn what was learned into habits applied in everyday work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="insights">
+  <div class="wrap i-grid">
+    <div class="copy reveal">
+      <span class="eyebrow">Free monthly live sessions</span>
+      <h2>SMD Consulting INSIGHTS</h2>
+      <p class="tag">Learn. Connect. Grow.</p>
+      <span class="rule"></span>
+      <p style="margin-top:28px">Free monthly live sessions exploring the human side of professional skills, such as negotiation and leadership, and how to navigate professional dynamics and organisational growth.</p>
+      <!-- PLACEHOLDER: replace # with the LinkedIn event / sign-up link -->
+      <a class="btn" href="#" style="margin-top:12px">Join the next session</a>
+    </div>
+    <div class="reveal">
+      <!-- PLACEHOLDER: replace with <img src="assets/insights.jpg" alt="SMD Consulting INSIGHTS live session"> -->
+      <div class="ph">Image · INSIGHTS session or event banner<br>landscape 16:10 · ≥ 1400 px wide</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What clients say</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="t-grid reveal">
+      <!-- PLACEHOLDER testimonial. Final markup:
+      <figure class="t-item"><blockquote>“Quote…”</blockquote><figcaption><b>Name</b> · Title, Organisation</figcaption></figure> -->
+      <figure class="t-item ph"><b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation</figure>
+      <figure class="t-item ph"><b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation</figure>
+    </div>
+  </div>
+</section>
+
+<!-- WORKED WITH -->
+<section class="worked" aria-label="Organisations worked with">
+  <div class="wrap">
+    <p class="label reveal">Worked with</p>
+    <ul class="logos reveal">
+      <!--LOGOS-->
+      <li><span class="txt">European Commission</span></li>
+      <li><span class="txt">Eurocities</span></li>
+      <li><span class="txt">ENEA</span></li>
+      <li><span class="txt">Ajuntament de Barcelona</span></li>
+      <li><span class="txt">City of Ghent</span></li>
+      <li><span class="txt">City of Dresden</span></li>
+      <li><span class="txt">Istanbul Metropolitan Municipality</span></li>
+      <li><span class="txt">Ajuntament d&#x27;Eivissa</span></li>
+      <li><span class="txt">United Nations Association of Spain (ANUE)</span></li>
+      <li><span class="txt">Universitat Oberta de Catalunya</span></li>
+      <li><span class="txt">EAE Business School</span></li>
+      <li><span class="txt">Adecco</span></li>
+      <li><span class="txt">GNE Finance</span></li>
+      <li><span class="txt">Digital Attitude</span></li>
+      <li><span class="txt">FormaMentis</span></li>
+      <!--/LOGOS-->
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <img class="bg-ring" src="assets/brush.svg" alt="">
+  <div class="wrap inner reveal">
+    <span class="eyebrow" style="color:var(--blush)">Get in touch</span>
+    <h2>Let's explore together which approach best fits your priorities.</h2>
+    <p>Share a few lines about your organisation and what you'd like to change. Every conversation is confidential.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:smdconsulting.solutions@gmail.com">Write to me</a>
+      <!-- PLACEHOLDER: replace # with Stefania's LinkedIn profile URL -->
+      <a class="btn ghost" href="#" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="mail"><a href="mailto:smdconsulting.solutions@gmail.com">smdconsulting.solutions@gmail.com</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Stefania Mascolo</span>
+    <span>Senior Consultant &amp; Capacity Development Advisor</span>
+  </div>
+</footer>
+
+<script>
+  // Header border on scroll + reveal-on-scroll. Nothing else.
+  const hdr = document.getElementById('top');
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => io.observe(el));
+  } else { els.forEach(el => el.classList.add('in')); }
+</script>
+</body>
+</html>
