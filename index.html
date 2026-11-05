@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor</title>
-<meta name="description" content="Stefania Mascolo helps leadership teams see clearly what isn't working inside their organisation, and builds the skills, habits and trust needed to change it. Change management, capacity development and leadership training.">
+<meta name="description" content="Stefania Mascolo aiuta i team di leadership a vedere con chiarezza ciò che non funziona nella loro organizzazione e sviluppa le competenze, le abitudini e la fiducia necessarie per cambiarlo.">
 <meta property="og:title" content="Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor">
-<meta property="og:description" content="An honest, independent view of what is holding your organisation back, and a structured path to change it.">
+<meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, capacity development, leadership training · IT · EN · ES">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/brush.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +67,7 @@
   .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
   .brand { display: flex; align-items: center; gap: 2px; text-decoration: none; color: var(--brown); font-weight: 600; font-size: 1.3rem; letter-spacing: -.01em; }
   .brand img { width: 46px; height: 46px; margin-right: -22px; position: relative; top: -2px; }
-  .brand span { position: relative; }
+  .brand span { position: relative; white-space: nowrap; }
   .nav ul { list-style: none; display: flex; align-items: center; gap: 34px; margin: 0; padding: 0; }
   .nav ul a { text-decoration: none; font-size: .98rem; color: var(--ink); position: relative; }
   .nav ul a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
@@ -81,7 +81,12 @@
   .btn.ghost { background: transparent; color: var(--ink); }
   .btn.ghost:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
   .nav ul a.btn { padding: 10px 20px; font-size: .95rem; color: #fff; }
-  @media (max-width: 860px) { .nav ul li:not(.cta) { display: none; } }
+  @media (max-width: 860px) { .nav ul li:not(.cta):not(.lang) { display: none; } .nav ul { gap: 14px; } }
+  .lang { display: flex; gap: 2px; }
+  .lang button { font: 600 .78rem/1 var(--serif); letter-spacing: .12em; background: none; border: 0; padding: 8px 6px; cursor: pointer; color: var(--muted); border-bottom: 1.5px solid transparent; }
+  .lang button:hover { color: var(--ink); }
+  .lang button[aria-pressed="true"] { color: var(--red); border-bottom-color: var(--red); }
+  @media (max-width: 520px) { .nav ul li.cta { display: none; } .brand { font-size: 1.15rem; } }
 
   /* Hero */
   .hero {
@@ -93,7 +98,7 @@
   }
   .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
   .hero .name { font-weight: 400; letter-spacing: .14em; text-transform: uppercase; font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--brown); margin-bottom: 26px; }
-  .hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.3rem); line-height: 1.08; }
+  .hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.08; }
   .hero h1 em { font-style: italic; font-weight: 400; color: var(--red); }
   .hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--muted); max-width: 560px; margin: 30px 0 40px; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -194,6 +199,7 @@
   .logos li { height: 92px; display: flex; align-items: center; justify-content: center; padding: 10px 12px; }
   .logos img { max-height: 54px; max-width: 150px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s; }
   .logos li:hover img { filter: none; opacity: 1; }
+  .logos img.sil, .logos li:hover img.sil { filter: brightness(0); opacity: .62; }
   .logos .txt { font-size: .95rem; font-weight: 600; text-align: center; color: var(--muted); line-height: 1.25; }
   @media (max-width: 900px) { .logos { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 520px) { .logos { grid-template-columns: repeat(2, 1fr); } .logos li { height: 80px; } .logos img { max-height: 44px; max-width: 128px; } }
@@ -224,14 +230,19 @@
 
 <header class="top" id="top">
   <div class="wrap nav">
-    <a class="brand" href="#" aria-label="Stefania Mascolo, home"><img src="assets/brush.svg" alt=""><span>Stefania Mascolo</span></a>
-    <nav aria-label="Main">
+    <a class="brand" href="#" aria-label="Stefania Mascolo"><img src="assets/brush.svg" alt=""><span>Stefania Mascolo</span></a>
+    <nav aria-label="Menu">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about" data-i18n="nav.about">Chi sono</a></li>
+        <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
+        <li><a href="#approach" data-i18n="nav.approach">Metodo</a></li>
         <li><a href="#insights">Insights</a></li>
-        <li class="cta"><a class="btn" href="#contact">Get in touch</a></li>
+        <li class="lang" role="group" aria-label="Language / Lingua / Idioma">
+          <button type="button" data-lang="it" lang="it" aria-label="Italiano">IT</button>
+          <button type="button" data-lang="en" lang="en" aria-label="English">EN</button>
+          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+        </li>
+        <li class="cta"><a class="btn" href="#contact" data-i18n="nav.cta">Contattami</a></li>
       </ul>
     </nav>
   </div>
@@ -245,23 +256,23 @@
     <div class="hero-grid">
       <div>
         <div class="name">Stefania Mascolo</div>
-        <h1>An honest outside view of what is <em>holding your organisation back.</em></h1>
-        <p class="lede">I work with CEOs and leadership teams to bring to light what isn't working, in processes, collaboration and leadership, and to build the skills and habits that turn strategy into lasting results.</p>
+        <h1 data-i18n="hero.h1">Uno sguardo esterno e onesto su ciò che <em>frena la vostra organizzazione.</em></h1>
+        <p class="lede" data-i18n="hero.lede">Affianco CEO e team di leadership nel far emergere ciò che non funziona, nei processi, nella collaborazione e nella leadership, e nello sviluppare le competenze e le abitudini che trasformano la strategia in risultati duraturi.</p>
         <div class="actions">
-          <a class="btn" href="#contact">Start a confidential conversation</a>
-          <a class="btn ghost" href="#services">Services</a>
+          <a class="btn" href="#contact" data-i18n="hero.cta1">Fissa una conversazione riservata</a>
+          <a class="btn ghost" href="#services" data-i18n="nav.services">Servizi</a>
         </div>
       </div>
       <div class="portrait">
         <!-- PLACEHOLDER: replace with <img src="assets/portrait.jpg" alt="Stefania Mascolo"> styled with border-radius:50% -->
-        <div class="ph">Portrait photo<br>square · ≥ 1000 px</div>
+        <div class="ph" data-i18n="ph.portrait">Foto ritratto<br>quadrata · ≥ 1000 px</div>
         <img class="ring" src="assets/brush.svg" alt="">
       </div>
     </div>
     <div class="facts">
       <div><b>Senior Consultant</b> &amp; Capacity Development Advisor</div>
-      <div><b>10 years</b> of international experience</div>
-      <div><b>Companies</b> &amp; public administrations</div>
+      <div data-i18n="facts.2"><b>10 anni</b> di esperienza internazionale</div>
+      <div data-i18n="facts.3"><b>Aziende</b> e pubbliche amministrazioni</div>
     </div>
   </div>
 </section>
@@ -271,9 +282,9 @@
   <img class="bg-ring" src="assets/brush.svg" alt="">
   <div class="wrap">
     <blockquote class="reveal">
-      <p>“If there's one thing I've learned from working with people and organisations over the past decade, it's that <strong>great strategies alone don't create impact.</strong>”</p>
+      <p data-i18n="st.quote">“Se c'è una cosa che ho imparato lavorando con persone e organizzazioni nell'ultimo decennio, è che <strong>le grandi strategie, da sole, non generano impatto.</strong>”</p>
     </blockquote>
-    <p class="follow reveal">My role is to bridge that gap: helping organisations turn a shared vision into coordinated action, build effective partnerships, and develop the skills their people and teams need to deliver lasting results, while finding fulfilment in their work.</p>
+    <p class="follow reveal" data-i18n="st.follow">Il mio ruolo è colmare questa distanza: aiutare le organizzazioni a trasformare una visione condivisa in azione coordinata, costruire partnership efficaci e sviluppare le competenze di cui persone e team hanno bisogno per ottenere risultati duraturi, trovando al tempo stesso soddisfazione nel proprio lavoro.</p>
   </div>
 </section>
 
@@ -281,28 +292,28 @@
 <section id="about">
   <div class="wrap about-grid">
     <div class="about-media reveal">
-      <!-- PLACEHOLDER: replace with <img src="assets/workshop.jpg" alt="Stefania facilitating a workshop"> -->
-      <div class="ph">Photo · Stefania facilitating a workshop or session<br>portrait 4:5 · ≥ 1200 px tall</div>
+      <!-- PLACEHOLDER: replace with <img src="assets/workshop.jpg" alt="Stefania Mascolo"> -->
+      <div class="ph" data-i18n="ph.workshop">Foto · Stefania durante un workshop o una sessione<br>verticale 4:5 · ≥ 1200 px di altezza</div>
     </div>
     <div class="about-copy reveal">
-      <span class="eyebrow">About</span>
-      <h2>Bridging strategy and the people who deliver it</h2>
+      <span class="eyebrow" data-i18n="nav.about">Chi sono</span>
+      <h2 data-i18n="about.h2">Un ponte tra la strategia e le persone che la realizzano</h2>
       <span class="rule"></span>
       <div class="body">
-        <p>Stefania Mascolo is a consultant with ten years of international experience in strategic consulting, capability development and the coordination of organisational change.</p>
-        <p>She works alongside companies and public administrations to identify the skills that need developing and to build tailored capacity-building programmes, taking care of their design, delivery and the evaluation of results.</p>
-        <p>She designs and leads corporate training in transversal and managerial skills, in particular negotiation, effective communication, leadership and collaboration. She also facilitates experiential workshops, team-building events and debriefing sessions, using participatory methods such as storytelling, gamification and group exercises to open honest dialogue, recognise and improve individual and team dynamics, and face the challenges of organisational change.</p>
-        <p>Her approach combines consulting rigour with close attention to relational dynamics. The aim is always the same: translate organisational needs into learning paths and new behavioural habits that people apply in their everyday work.</p>
-        <span class="langs">Works in Italian, English and Spanish</span>
+        <p data-i18n="about.p1">Stefania Mascolo è una consulente con 10 anni di esperienza internazionale nella consulenza strategica, nello sviluppo delle competenze e nel coordinamento di iniziative relative ai processi di cambiamento organizzativo.</p>
+        <p data-i18n="about.p2">Affianca le aziende nell'individuare le competenze da sviluppare e nel costruire programmi di capacity building su misura, curandone la progettazione, la realizzazione e la valutazione dei risultati.</p>
+        <p data-i18n="about.p3">Progetta e conduce percorsi di formazione aziendale su competenze trasversali e manageriali, in particolare negoziazione, comunicazione efficace, leadership e collaborazione. Facilita inoltre workshop esperienziali, eventi di team building e sessioni di debriefing, utilizzando metodologie partecipative, tra cui storytelling, gamification ed esercitazioni di gruppo, per stimolare il confronto, riconoscere e migliorare dinamiche individuali e di gruppo ed affrontare le sfide del cambiamento organizzativo.</p>
+        <p data-i18n="about.p4">Il suo approccio unisce esperienza consulenziale e attenzione alle dinamiche relazionali, con l'obiettivo di tradurre i bisogni organizzativi in percorsi di apprendimento e nuove abitudini comportamentali da applicare nel lavoro quotidiano.</p>
+        <span class="langs" data-i18n="about.langs">Lavora in italiano, inglese e spagnolo</span>
       </div>
       <div class="timeline">
-        <h3>Selected experience</h3>
+        <h3 data-i18n="tl.h">Esperienze selezionate</h3>
         <ol>
-          <li><span>2026 – now</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milan</div></li>
-          <li><span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Brussels</div></li>
-          <li><span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcelona</div></li>
-          <li><span>2020 – 2022</span><div><b>Professor</b>, UNITAR Master's in International Affairs · Universitat Oberta de Catalunya</div></li>
-          <li><span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · United Nations Association of Spain, Barcelona</div></li>
+          <li data-i18n="tl.1"><span>2026 – oggi</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milano</div></li>
+          <li data-i18n="tl.2"><span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Bruxelles</div></li>
+          <li data-i18n="tl.3"><span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcellona</div></li>
+          <li data-i18n="tl.4"><span>2020 – 2022</span><div><b>Docente</b>, Master UNITAR in Affari Internazionali · Universitat Oberta de Catalunya</div></li>
+          <li data-i18n="tl.5"><span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · Associazione per le Nazioni Unite in Spagna, Barcellona</div></li>
         </ol>
       </div>
     </div>
@@ -313,31 +324,31 @@
 <section class="principles">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">How I work</span>
-      <h2>Trust is the precondition for change</h2>
+      <span class="eyebrow" data-i18n="pr.eyebrow">Come lavoro</span>
+      <h2 data-i18n="pr.h2">La fiducia è la premessa di ogni cambiamento</h2>
       <span class="rule"></span>
-      <p>Assessing an organisation means hearing what people don't usually say out loud. That only works when everyone involved knows how the information will be handled.</p>
+      <p data-i18n="pr.lead">Valutare un'organizzazione significa ascoltare ciò che di solito non viene detto ad alta voce. Funziona solo se tutte le persone coinvolte sanno come verranno trattate le informazioni.</p>
     </div>
     <div class="p-grid reveal">
       <div class="p-item">
         <span class="n">01</span>
-        <h3>Confidential by default</h3>
-        <p>What emerges in interviews and workshops is handled with discretion. Findings are reported at the level agreed at the outset, never attributed to individuals without consent.</p>
+        <h3 data-i18n="pr.1h">Riservatezza, sempre</h3>
+        <p data-i18n="pr.1p">Ciò che emerge da interviste e workshop viene trattato con discrezione. I risultati sono condivisi al livello concordato all'inizio e mai attribuiti a singole persone senza il loro consenso.</p>
       </div>
       <div class="p-item">
         <span class="n">02</span>
-        <h3>Independent and candid</h3>
-        <p>Leadership receives a clear, evidence-based picture, including what is uncomfortable. The focus is on systems and behaviours, not on blame.</p>
+        <h3 data-i18n="pr.2h">Indipendenza e franchezza</h3>
+        <p data-i18n="pr.2p">La leadership riceve un quadro chiaro e basato su evidenze, anche quando è scomodo. L'attenzione è sui sistemi e sui comportamenti, non sulle colpe.</p>
       </div>
       <div class="p-item">
         <span class="n">03</span>
-        <h3>Built with your people</h3>
-        <p>Solutions are designed together with the teams who will live them, so change is owned and not imposed.</p>
+        <h3 data-i18n="pr.3h">Costruito con le vostre persone</h3>
+        <p data-i18n="pr.3p">Le soluzioni nascono insieme ai team che le vivranno ogni giorno, così il cambiamento è condiviso e non imposto.</p>
       </div>
       <div class="p-item">
         <span class="n">04</span>
-        <h3>Measured results</h3>
-        <p>Every engagement starts with clear objectives and ends with an evaluation of what has actually changed in day-to-day work.</p>
+        <h3 data-i18n="pr.4h">Risultati misurabili</h3>
+        <p data-i18n="pr.4p">Ogni intervento parte da obiettivi chiari e si chiude con una valutazione di ciò che è davvero cambiato nel lavoro quotidiano.</p>
       </div>
     </div>
   </div>
@@ -347,47 +358,47 @@
 <section id="services">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Services</span>
-      <h2>From diagnosis to new ways of working</h2>
+      <span class="eyebrow" data-i18n="nav.services">Servizi</span>
+      <h2 data-i18n="sv.h2">Dalla diagnosi a nuovi modi di lavorare</h2>
       <span class="rule"></span>
-      <p>Every engagement is tailored to your organisation, your team and your priorities. Delivered in person, online or hybrid.</p>
+      <p data-i18n="sv.lead">Ogni intervento è costruito su misura per la vostra organizzazione, il vostro team e le vostre priorità. In presenza, online o in formato ibrido.</p>
     </div>
     <div class="s-grid reveal">
       <article class="s-item">
         <div class="n">01</div>
-        <h3>Organisational Assessment</h3>
-        <p>An independent diagnosis of what is and isn't working, for leadership teams who want the full picture before deciding where to act.</p>
-        <ul><li>Needs and barrier analysis</li><li>Interviews and team observation</li><li>Clear findings and priorities</li></ul>
+        <h3 data-i18n="s1.h">Assessment organizzativo</h3>
+        <p data-i18n="s1.p">Una diagnosi indipendente di ciò che funziona e di ciò che non funziona, per i team di leadership che vogliono il quadro completo prima di decidere dove intervenire.</p>
+        <ul data-i18n="s1.ul"><li>Analisi dei bisogni e delle barriere</li><li>Interviste e osservazione dei team</li><li>Evidenze chiare e priorità</li></ul>
       </article>
       <article class="s-item">
         <div class="n">02</div>
-        <h3>Change Management &amp; Adoption</h3>
-        <p>Guiding teams through the adoption of new processes, methodologies, tools and ways of collaborating.</p>
-        <ul><li>Stakeholder engagement</li><li>Change enablement</li><li>Adoption roadmaps</li></ul>
+        <h3 data-i18n="s2.h">Change management e adozione</h3>
+        <p data-i18n="s2.p">Accompagnare i team nell'adozione di nuovi processi, metodologie, strumenti e modi di collaborare.</p>
+        <ul data-i18n="s2.ul"><li>Coinvolgimento degli stakeholder</li><li>Change enablement</li><li>Roadmap di adozione</li></ul>
       </article>
       <article class="s-item">
         <div class="n">03</div>
-        <h3>Leadership &amp; Management Training</h3>
-        <p>Training programmes for managers and teams on the skills that shape day-to-day performance.</p>
-        <ul><li>Negotiation</li><li>Effective communication</li><li>Leadership and collaboration</li></ul>
+        <h3 data-i18n="s3.h">Formazione per leadership e management</h3>
+        <p data-i18n="s3.p">Percorsi formativi per manager e team sulle competenze che determinano la performance quotidiana.</p>
+        <ul data-i18n="s3.ul"><li>Negoziazione</li><li>Comunicazione efficace</li><li>Leadership e collaborazione</li></ul>
       </article>
       <article class="s-item">
         <div class="n">04</div>
-        <h3>Experiential Workshops &amp; Team Building</h3>
-        <p>Participatory sessions that surface team dynamics and turn them into shared commitments.</p>
-        <ul><li>Storytelling and gamification</li><li>Simulations and group exercises</li><li>Debriefing sessions</li></ul>
+        <h3 data-i18n="s4.h">Workshop esperienziali e team building</h3>
+        <p data-i18n="s4.p">Sessioni partecipative che fanno emergere le dinamiche di gruppo e le trasformano in impegni condivisi.</p>
+        <ul data-i18n="s4.ul"><li>Storytelling e gamification</li><li>Simulazioni ed esercitazioni di gruppo</li><li>Sessioni di debriefing</li></ul>
       </article>
       <article class="s-item">
         <div class="n">05</div>
-        <h3>Capacity-Building Programmes</h3>
-        <p>End-to-end learning design, from needs analysis and objectives to delivery and evaluation of results.</p>
-        <ul><li>Macro- and micro-design</li><li>Methodologies and learning tools</li><li>Impact evaluation</li></ul>
+        <h3 data-i18n="s5.h">Programmi di capacity building</h3>
+        <p data-i18n="s5.p">Progettazione formativa end-to-end: dall'analisi dei bisogni e dagli obiettivi fino all'erogazione e alla valutazione dei risultati.</p>
+        <ul data-i18n="s5.ul"><li>Macro e micro-progettazione</li><li>Metodologie e strumenti didattici</li><li>Valutazione dell'impatto</li></ul>
       </article>
       <article class="s-item">
         <div class="n">06</div>
-        <h3>Partnerships &amp; Complex Programmes</h3>
-        <p>Structuring multi-stakeholder and EU-funded programmes so that partners stay aligned and delivery stays high quality.</p>
-        <ul><li>Programme architecture</li><li>Stakeholder coordination</li><li>Monitoring and reporting</li></ul>
+        <h3 data-i18n="s6.h">Partnership e programmi complessi</h3>
+        <p data-i18n="s6.p">Strutturare programmi multi-stakeholder e finanziati dall'UE perché i partner restino allineati e la qualità dei risultati resti alta.</p>
+        <ul data-i18n="s6.ul"><li>Architettura di programma</li><li>Coordinamento degli stakeholder</li><li>Monitoraggio e reporting</li></ul>
       </article>
     </div>
   </div>
@@ -397,15 +408,15 @@
 <section id="approach" style="padding-top:0">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Approach</span>
-      <h2>A clear path, end to end</h2>
+      <span class="eyebrow" data-i18n="nav.approach">Metodo</span>
+      <h2 data-i18n="ap.h2">Un percorso chiaro, dall'inizio alla fine</h2>
       <span class="rule"></span>
     </div>
     <div class="steps reveal">
-      <div class="step"><h3>Listen &amp; assess</h3><p>Understand the organisation, its goals and the barriers in the way, through conversations at every level.</p></div>
-      <div class="step"><h3>Design</h3><p>Define the skills to develop and build a tailored programme around your team and priorities.</p></div>
-      <div class="step"><h3>Deliver</h3><p>Training, workshops and facilitation that put people at the centre and make change practical.</p></div>
-      <div class="step"><h3>Evaluate &amp; embed</h3><p>Measure results and turn what was learned into habits applied in everyday work.</p></div>
+      <div class="step"><h3 data-i18n="ap.1h">Ascolto e analisi</h3><p data-i18n="ap.1p">Comprendere l'organizzazione, i suoi obiettivi e le barriere che li ostacolano, attraverso conversazioni a ogni livello.</p></div>
+      <div class="step"><h3 data-i18n="ap.2h">Progettazione</h3><p data-i18n="ap.2p">Definire le competenze da sviluppare e costruire un programma su misura per il vostro team e le vostre priorità.</p></div>
+      <div class="step"><h3 data-i18n="ap.3h">Realizzazione</h3><p data-i18n="ap.3p">Formazione, workshop e facilitazione che mettono le persone al centro e rendono il cambiamento concreto.</p></div>
+      <div class="step"><h3 data-i18n="ap.4h">Valutazione e consolidamento</h3><p data-i18n="ap.4p">Misurare i risultati e trasformare ciò che si è appreso in abitudini applicate nel lavoro quotidiano.</p></div>
     </div>
   </div>
 </section>
@@ -414,17 +425,17 @@
 <section id="insights" class="insights">
   <div class="wrap i-grid">
     <div class="copy reveal">
-      <span class="eyebrow">Free monthly live sessions</span>
+      <span class="eyebrow" data-i18n="in.eyebrow">Sessioni live mensili gratuite</span>
       <h2>SMD Consulting INSIGHTS</h2>
       <p class="tag">Learn. Connect. Grow.</p>
       <span class="rule"></span>
-      <p style="margin-top:28px">Free monthly live sessions exploring the human side of professional skills, such as negotiation and leadership, and how to navigate professional dynamics and organisational growth.</p>
+      <p style="margin-top:28px" data-i18n="in.p">Sessioni live mensili e gratuite che esplorano il lato umano delle competenze professionali, come la negoziazione e la leadership, e come muoversi tra le dinamiche professionali e la crescita organizzativa.</p>
       <!-- PLACEHOLDER: replace # with the LinkedIn event / sign-up link -->
-      <a class="btn" href="#" style="margin-top:12px">Join the next session</a>
+      <a class="btn" href="#" style="margin-top:12px" data-i18n="in.cta">Partecipa alla prossima sessione</a>
     </div>
     <div class="reveal">
-      <!-- PLACEHOLDER: replace with <img src="assets/insights.jpg" alt="SMD Consulting INSIGHTS live session"> -->
-      <div class="ph">Image · INSIGHTS session or event banner<br>landscape 16:10 · ≥ 1400 px wide</div>
+      <!-- PLACEHOLDER: replace with <img src="assets/insights.jpg" alt="SMD Consulting INSIGHTS"> -->
+      <div class="ph" data-i18n="ph.insights">Immagine · sessione INSIGHTS o banner dell'evento<br>orizzontale 16:10 · ≥ 1400 px di larghezza</div>
     </div>
   </div>
 </section>
@@ -433,39 +444,39 @@
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Testimonials</span>
-      <h2>What clients say</h2>
+      <span class="eyebrow" data-i18n="te.eyebrow">Testimonianze</span>
+      <h2 data-i18n="te.h2">Cosa dicono i clienti</h2>
       <span class="rule"></span>
     </div>
     <div class="t-grid reveal">
       <!-- PLACEHOLDER testimonial. Final markup:
       <figure class="t-item"><blockquote>“Quote…”</blockquote><figcaption><b>Name</b> · Title, Organisation</figcaption></figure> -->
-      <figure class="t-item ph"><b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation</figure>
-      <figure class="t-item ph"><b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation</figure>
+      <figure class="t-item ph" data-i18n="te.ph"><b>Testimonianza (segnaposto)</b>Citazione del cliente, 2–3 frasi<br>Nome · Ruolo, Organizzazione</figure>
+      <figure class="t-item ph" data-i18n="te.ph"><b>Testimonianza (segnaposto)</b>Citazione del cliente, 2–3 frasi<br>Nome · Ruolo, Organizzazione</figure>
     </div>
   </div>
 </section>
 
 <!-- WORKED WITH -->
-<section class="worked" aria-label="Organisations worked with">
+<section class="worked">
   <div class="wrap">
-    <p class="label reveal">Worked with</p>
+    <p class="label reveal" data-i18n="wk.label">Ho lavorato con</p>
     <ul class="logos reveal">
       <!--LOGOS-->
-      <li><span class="txt">European Commission</span></li>
-      <li><span class="txt">Eurocities</span></li>
-      <li><span class="txt">ENEA</span></li>
-      <li><span class="txt">Ajuntament de Barcelona</span></li>
-      <li><span class="txt">City of Ghent</span></li>
-      <li><span class="txt">City of Dresden</span></li>
-      <li><span class="txt">Istanbul Metropolitan Municipality</span></li>
-      <li><span class="txt">Ajuntament d&#x27;Eivissa</span></li>
-      <li><span class="txt">United Nations Association of Spain (ANUE)</span></li>
-      <li><span class="txt">Universitat Oberta de Catalunya</span></li>
-      <li><span class="txt">EAE Business School</span></li>
-      <li><span class="txt">Adecco</span></li>
-      <li><span class="txt">GNE Finance</span></li>
-      <li><span class="txt">Digital Attitude</span></li>
+      <li><img src="assets/logos/european-commission.svg" alt="European Commission" title="European Commission" loading="lazy"></li>
+      <li><img src="assets/logos/eurocities.svg" alt="Eurocities" title="Eurocities" loading="lazy"></li>
+      <li><img src="assets/logos/enea.svg" alt="ENEA" title="ENEA" loading="lazy"></li>
+      <li><img src="assets/logos/barcelona.svg" alt="Ajuntament de Barcelona" title="Ajuntament de Barcelona" loading="lazy"></li>
+      <li><img src="assets/logos/ghent.svg" alt="City of Ghent" title="City of Ghent" loading="lazy"></li>
+      <li><img src="assets/logos/dresden.svg" alt="City of Dresden" title="City of Dresden" loading="lazy"></li>
+      <li><img src="assets/logos/istanbul.svg" alt="Istanbul Metropolitan Municipality" title="Istanbul Metropolitan Municipality" loading="lazy" class="sil"></li>
+      <li><img src="assets/logos/eivissa.png" alt="Ajuntament d&#x27;Eivissa" title="Ajuntament d&#x27;Eivissa" loading="lazy"></li>
+      <li><img src="assets/logos/anue.png" alt="United Nations Association of Spain (ANUE)" title="United Nations Association of Spain (ANUE)" loading="lazy"></li>
+      <li><img src="assets/logos/uoc.svg" alt="Universitat Oberta de Catalunya" title="Universitat Oberta de Catalunya" loading="lazy"></li>
+      <li><img src="assets/logos/eae.svg" alt="EAE Business School" title="EAE Business School" loading="lazy"></li>
+      <li><img src="assets/logos/adecco.svg" alt="Adecco" title="Adecco" loading="lazy"></li>
+      <li><img src="assets/logos/gne-finance.png" alt="GNE Finance" title="GNE Finance" loading="lazy" class="sil"></li>
+      <li><img src="assets/logos/digital-attitude.svg" alt="Digital Attitude" title="Digital Attitude" loading="lazy"></li>
       <li><span class="txt">FormaMentis</span></li>
       <!--/LOGOS-->
     </ul>
@@ -476,11 +487,11 @@
 <section id="contact" class="contact">
   <img class="bg-ring" src="assets/brush.svg" alt="">
   <div class="wrap inner reveal">
-    <span class="eyebrow" style="color:var(--blush)">Get in touch</span>
-    <h2>Let's explore together which approach best fits your priorities.</h2>
-    <p>Share a few lines about your organisation and what you'd like to change. Every conversation is confidential.</p>
+    <span class="eyebrow" style="color:var(--blush)" data-i18n="ct.eyebrow">Contatti</span>
+    <h2 data-i18n="ct.h2">Esploriamo insieme la soluzione più adatta alle vostre priorità.</h2>
+    <p data-i18n="ct.p">Raccontatemi in poche righe la vostra organizzazione e cosa vorreste cambiare. Ogni conversazione è riservata.</p>
     <div class="actions">
-      <a class="btn" href="mailto:smdconsulting.solutions@gmail.com">Write to me</a>
+      <a class="btn" href="mailto:smdconsulting.solutions@gmail.com" data-i18n="ct.btn">Scrivimi</a>
       <!-- PLACEHOLDER: replace # with Stefania's LinkedIn profile URL -->
       <a class="btn ghost" href="#" rel="noopener">LinkedIn</a>
     </div>
@@ -498,15 +509,195 @@
 </footer>
 
 <script>
-  // Header border on scroll + reveal-on-scroll. Nothing else.
-  const hdr = document.getElementById('top');
-  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 8);
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  const els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-    els.forEach(el => io.observe(el));
-  } else { els.forEach(el => el.classList.add('in')); }
+/* Translations. Italian is the default and lives in the HTML above; EN and ES are below.
+   Any key missing here falls back to the Italian text. */
+const I18N = {
+en: {
+  "meta.desc": "Stefania Mascolo helps leadership teams see clearly what isn't working inside their organisation, and builds the skills, habits and trust needed to change it.",
+  "nav.about": "About", "nav.services": "Services", "nav.approach": "Approach", "nav.cta": "Get in touch",
+  "hero.h1": "An honest outside view of what is <em>holding your organisation back.</em>",
+  "hero.lede": "I work with CEOs and leadership teams to bring to light what isn't working, in processes, collaboration and leadership, and to build the skills and habits that turn strategy into lasting results.",
+  "hero.cta1": "Start a confidential conversation",
+  "ph.portrait": "Portrait photo<br>square · ≥ 1000 px",
+  "facts.2": "<b>10 years</b> of international experience",
+  "facts.3": "<b>Companies</b> &amp; public administrations",
+  "st.quote": "“If there's one thing I've learned from working with people and organisations over the past decade, it's that <strong>great strategies alone don't create impact.</strong>”",
+  "st.follow": "My role is to bridge that gap: helping organisations turn a shared vision into coordinated action, build effective partnerships, and develop the skills their people and teams need to deliver lasting results, while finding fulfilment in their work.",
+  "ph.workshop": "Photo · Stefania facilitating a workshop or session<br>portrait 4:5 · ≥ 1200 px tall",
+  "about.h2": "Bridging strategy and the people who deliver it",
+  "about.p1": "Stefania Mascolo is a consultant with ten years of international experience in strategic consulting, capability development and the coordination of organisational change.",
+  "about.p2": "She works alongside companies to identify the skills that need developing and to build tailored capacity-building programmes, taking care of their design, delivery and the evaluation of results.",
+  "about.p3": "She designs and leads corporate training in transversal and managerial skills, in particular negotiation, effective communication, leadership and collaboration. She also facilitates experiential workshops, team-building events and debriefing sessions, using participatory methods such as storytelling, gamification and group exercises to open honest dialogue, recognise and improve individual and team dynamics, and face the challenges of organisational change.",
+  "about.p4": "Her approach combines consulting experience with close attention to relational dynamics, with one aim: to translate organisational needs into learning paths and new behavioural habits that people apply in their everyday work.",
+  "about.langs": "Works in Italian, English and Spanish",
+  "tl.h": "Selected experience",
+  "tl.1": "<span>2026 – now</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milan</div>",
+  "tl.2": "<span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Brussels</div>",
+  "tl.3": "<span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcelona</div>",
+  "tl.4": "<span>2020 – 2022</span><div><b>Professor</b>, UNITAR Master's in International Affairs · Universitat Oberta de Catalunya</div>",
+  "tl.5": "<span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · United Nations Association of Spain, Barcelona</div>",
+  "pr.eyebrow": "How I work",
+  "pr.h2": "Trust is the precondition for change",
+  "pr.lead": "Assessing an organisation means hearing what people don't usually say out loud. That only works when everyone involved knows how the information will be handled.",
+  "pr.1h": "Confidential by default",
+  "pr.1p": "What emerges in interviews and workshops is handled with discretion. Findings are reported at the level agreed at the outset, never attributed to individuals without consent.",
+  "pr.2h": "Independent and candid",
+  "pr.2p": "Leadership receives a clear, evidence-based picture, including what is uncomfortable. The focus is on systems and behaviours, not on blame.",
+  "pr.3h": "Built with your people",
+  "pr.3p": "Solutions are designed together with the teams who will live them, so change is owned and not imposed.",
+  "pr.4h": "Measured results",
+  "pr.4p": "Every engagement starts with clear objectives and ends with an evaluation of what has actually changed in day-to-day work.",
+  "sv.h2": "From diagnosis to new ways of working",
+  "sv.lead": "Every engagement is tailored to your organisation, your team and your priorities. Delivered in person, online or hybrid.",
+  "s1.h": "Organisational Assessment",
+  "s1.p": "An independent diagnosis of what is and isn't working, for leadership teams who want the full picture before deciding where to act.",
+  "s1.ul": "<li>Needs and barrier analysis</li><li>Interviews and team observation</li><li>Clear findings and priorities</li>",
+  "s2.h": "Change Management &amp; Adoption",
+  "s2.p": "Guiding teams through the adoption of new processes, methodologies, tools and ways of collaborating.",
+  "s2.ul": "<li>Stakeholder engagement</li><li>Change enablement</li><li>Adoption roadmaps</li>",
+  "s3.h": "Leadership &amp; Management Training",
+  "s3.p": "Training programmes for managers and teams on the skills that shape day-to-day performance.",
+  "s3.ul": "<li>Negotiation</li><li>Effective communication</li><li>Leadership and collaboration</li>",
+  "s4.h": "Experiential Workshops &amp; Team Building",
+  "s4.p": "Participatory sessions that surface team dynamics and turn them into shared commitments.",
+  "s4.ul": "<li>Storytelling and gamification</li><li>Simulations and group exercises</li><li>Debriefing sessions</li>",
+  "s5.h": "Capacity-Building Programmes",
+  "s5.p": "End-to-end learning design, from needs analysis and objectives to delivery and evaluation of results.",
+  "s5.ul": "<li>Macro- and micro-design</li><li>Methodologies and learning tools</li><li>Impact evaluation</li>",
+  "s6.h": "Partnerships &amp; Complex Programmes",
+  "s6.p": "Structuring multi-stakeholder and EU-funded programmes so that partners stay aligned and delivery stays high quality.",
+  "s6.ul": "<li>Programme architecture</li><li>Stakeholder coordination</li><li>Monitoring and reporting</li>",
+  "ap.h2": "A clear path, end to end",
+  "ap.1h": "Listen &amp; assess", "ap.1p": "Understand the organisation, its goals and the barriers in the way, through conversations at every level.",
+  "ap.2h": "Design", "ap.2p": "Define the skills to develop and build a tailored programme around your team and priorities.",
+  "ap.3h": "Deliver", "ap.3p": "Training, workshops and facilitation that put people at the centre and make change practical.",
+  "ap.4h": "Evaluate &amp; embed", "ap.4p": "Measure results and turn what was learned into habits applied in everyday work.",
+  "in.eyebrow": "Free monthly live sessions",
+  "in.p": "Free monthly live sessions exploring the human side of professional skills, such as negotiation and leadership, and how to navigate professional dynamics and organisational growth.",
+  "in.cta": "Join the next session",
+  "ph.insights": "Image · INSIGHTS session or event banner<br>landscape 16:10 · ≥ 1400 px wide",
+  "te.eyebrow": "Testimonials", "te.h2": "What clients say",
+  "te.ph": "<b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation",
+  "wk.label": "Worked with",
+  "ct.eyebrow": "Get in touch",
+  "ct.h2": "Let's explore together which approach best fits your priorities.",
+  "ct.p": "Share a few lines about your organisation and what you'd like to change. Every conversation is confidential.",
+  "ct.btn": "Write to me"
+},
+es: {
+  "meta.desc": "Stefania Mascolo ayuda a los equipos directivos a ver con claridad lo que no funciona en su organización y desarrolla las competencias, los hábitos y la confianza necesarios para cambiarlo.",
+  "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.approach": "Método", "nav.cta": "Contacto",
+  "hero.h1": "Una mirada externa y honesta sobre lo que <em>frena a su organización.</em>",
+  "hero.lede": "Acompaño a CEOs y equipos directivos a sacar a la luz lo que no funciona, en los procesos, la colaboración y el liderazgo, y a desarrollar las competencias y los hábitos que convierten la estrategia en resultados duraderos.",
+  "hero.cta1": "Concierte una conversación confidencial",
+  "ph.portrait": "Foto de retrato<br>cuadrada · ≥ 1000 px",
+  "facts.2": "<b>10 años</b> de experiencia internacional",
+  "facts.3": "<b>Empresas</b> y administraciones públicas",
+  "st.quote": "“Si algo he aprendido trabajando con personas y organizaciones durante la última década, es que <strong>las grandes estrategias, por sí solas, no generan impacto.</strong>”",
+  "st.follow": "Mi papel es cerrar esa brecha: ayudar a las organizaciones a convertir una visión compartida en acción coordinada, construir alianzas eficaces y desarrollar las competencias que las personas y los equipos necesitan para lograr resultados duraderos, encontrando al mismo tiempo satisfacción en su trabajo.",
+  "ph.workshop": "Foto · Stefania facilitando un taller o una sesión<br>vertical 4:5 · ≥ 1200 px de alto",
+  "about.h2": "Un puente entre la estrategia y las personas que la hacen realidad",
+  "about.p1": "Stefania Mascolo es consultora con 10 años de experiencia internacional en consultoría estratégica, desarrollo de competencias y coordinación de iniciativas de cambio organizacional.",
+  "about.p2": "Acompaña a las empresas a identificar las competencias que deben desarrollarse y a construir programas de capacity building a medida, encargándose de su diseño, su implementación y la evaluación de los resultados.",
+  "about.p3": "Diseña e imparte formación corporativa en competencias transversales y directivas, en particular negociación, comunicación eficaz, liderazgo y colaboración. Además, facilita talleres experienciales, actividades de team building y sesiones de debriefing con metodologías participativas como el storytelling, la gamificación y los ejercicios en grupo, para fomentar el diálogo, reconocer y mejorar las dinámicas individuales y de equipo y afrontar los retos del cambio organizacional.",
+  "about.p4": "Su enfoque combina experiencia consultiva y atención a las dinámicas relacionales, con el objetivo de traducir las necesidades de la organización en itinerarios de aprendizaje y nuevos hábitos de comportamiento aplicables al trabajo diario.",
+  "about.langs": "Trabaja en italiano, inglés y español",
+  "tl.h": "Experiencia seleccionada",
+  "tl.1": "<span>2026 – hoy</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milán</div>",
+  "tl.2": "<span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Bruselas</div>",
+  "tl.3": "<span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcelona</div>",
+  "tl.4": "<span>2020 – 2022</span><div><b>Profesora</b>, Máster UNITAR en Asuntos Internacionales · Universitat Oberta de Catalunya</div>",
+  "tl.5": "<span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · Asociación para las Naciones Unidas en España, Barcelona</div>",
+  "pr.eyebrow": "Cómo trabajo",
+  "pr.h2": "La confianza es la condición previa para el cambio",
+  "pr.lead": "Evaluar una organización significa escuchar lo que normalmente no se dice en voz alta. Solo funciona si todas las personas implicadas saben cómo se tratará la información.",
+  "pr.1h": "Confidencialidad ante todo",
+  "pr.1p": "Lo que surge en entrevistas y talleres se trata con discreción. Los resultados se comparten al nivel acordado al inicio y nunca se atribuyen a personas concretas sin su consentimiento.",
+  "pr.2h": "Independencia y franqueza",
+  "pr.2p": "La dirección recibe una imagen clara y basada en evidencias, también cuando resulta incómoda. El foco está en los sistemas y los comportamientos, no en buscar culpables.",
+  "pr.3h": "Construido con su equipo",
+  "pr.3p": "Las soluciones se diseñan junto a los equipos que las vivirán cada día, para que el cambio sea compartido y no impuesto.",
+  "pr.4h": "Resultados medibles",
+  "pr.4p": "Cada proyecto empieza con objetivos claros y termina con una evaluación de lo que realmente ha cambiado en el trabajo diario.",
+  "sv.h2": "Del diagnóstico a nuevas formas de trabajar",
+  "sv.lead": "Cada proyecto se diseña a medida de su organización, su equipo y sus prioridades. Presencial, online o en formato híbrido.",
+  "s1.h": "Diagnóstico organizacional",
+  "s1.p": "Un diagnóstico independiente de lo que funciona y lo que no, para equipos directivos que quieren la imagen completa antes de decidir dónde actuar.",
+  "s1.ul": "<li>Análisis de necesidades y barreras</li><li>Entrevistas y observación de equipos</li><li>Conclusiones claras y prioridades</li>",
+  "s2.h": "Gestión del cambio y adopción",
+  "s2.p": "Acompañar a los equipos en la adopción de nuevos procesos, metodologías, herramientas y formas de colaborar.",
+  "s2.ul": "<li>Implicación de los stakeholders</li><li>Facilitación del cambio</li><li>Hojas de ruta de adopción</li>",
+  "s3.h": "Formación en liderazgo y gestión",
+  "s3.p": "Programas de formación para mandos y equipos en las competencias que marcan el rendimiento diario.",
+  "s3.ul": "<li>Negociación</li><li>Comunicación eficaz</li><li>Liderazgo y colaboración</li>",
+  "s4.h": "Talleres experienciales y team building",
+  "s4.p": "Sesiones participativas que sacan a la luz las dinámicas de equipo y las convierten en compromisos compartidos.",
+  "s4.ul": "<li>Storytelling y gamificación</li><li>Simulaciones y ejercicios en grupo</li><li>Sesiones de debriefing</li>",
+  "s5.h": "Programas de capacity building",
+  "s5.p": "Diseño formativo de principio a fin: del análisis de necesidades y los objetivos a la impartición y la evaluación de resultados.",
+  "s5.ul": "<li>Macro y microdiseño</li><li>Metodologías y herramientas de aprendizaje</li><li>Evaluación del impacto</li>",
+  "s6.h": "Alianzas y programas complejos",
+  "s6.p": "Estructurar programas multiactor y financiados por la UE para que los socios estén alineados y la calidad de la ejecución se mantenga alta.",
+  "s6.ul": "<li>Arquitectura de programas</li><li>Coordinación de stakeholders</li><li>Seguimiento e informes</li>",
+  "ap.h2": "Un camino claro, de principio a fin",
+  "ap.1h": "Escuchar y analizar", "ap.1p": "Entender la organización, sus objetivos y las barreras que se interponen, mediante conversaciones a todos los niveles.",
+  "ap.2h": "Diseñar", "ap.2p": "Definir las competencias que hay que desarrollar y construir un programa a medida de su equipo y sus prioridades.",
+  "ap.3h": "Implementar", "ap.3p": "Formación, talleres y facilitación que ponen a las personas en el centro y hacen el cambio tangible.",
+  "ap.4h": "Evaluar y consolidar", "ap.4p": "Medir los resultados y convertir lo aprendido en hábitos aplicados en el trabajo diario.",
+  "in.eyebrow": "Sesiones mensuales gratuitas en directo",
+  "in.p": "Sesiones mensuales gratuitas en directo que exploran el lado humano de las competencias profesionales, como la negociación y el liderazgo, y cómo navegar las dinámicas profesionales y el crecimiento organizacional.",
+  "in.cta": "Únase a la próxima sesión",
+  "ph.insights": "Imagen · sesión INSIGHTS o banner del evento<br>horizontal 16:10 · ≥ 1400 px de ancho",
+  "te.eyebrow": "Testimonios", "te.h2": "Lo que dicen los clientes",
+  "te.ph": "<b>Testimonio (marcador)</b>Cita del cliente, 2–3 frases<br>Nombre · Cargo, Organización",
+  "wk.label": "He trabajado con",
+  "ct.eyebrow": "Contacto",
+  "ct.h2": "Exploremos juntos la solución que mejor se adapta a sus prioridades.",
+  "ct.p": "Cuénteme en pocas líneas sobre su organización y lo que le gustaría cambiar. Toda conversación es confidencial.",
+  "ct.btn": "Escríbame"
+}
+};
+
+(() => {
+  const nodes = [...document.querySelectorAll('[data-i18n]')];
+  const metaDesc = document.querySelector('meta[name="description"]');
+  const it = { "meta.desc": metaDesc.content };
+  nodes.forEach(n => { if (!(n.dataset.i18n in it)) it[n.dataset.i18n] = n.innerHTML; });
+  I18N.it = it;
+  const btns = document.querySelectorAll('.lang button');
+
+  function apply(lang) {
+    if (!I18N[lang]) lang = 'it';
+    const d = I18N[lang];
+    nodes.forEach(n => { const k = n.dataset.i18n; n.innerHTML = d[k] ?? it[k]; });
+    metaDesc.content = d["meta.desc"] ?? it["meta.desc"];
+    document.documentElement.lang = lang;
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    return lang;
+  }
+
+  const fromUrl = new URLSearchParams(location.search).get('lang');
+  let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  apply(fromUrl || saved || 'it');
+
+  btns.forEach(b => b.addEventListener('click', () => {
+    const lang = apply(b.dataset.lang);
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    const u = new URL(location.href);
+    if (lang === 'it') u.searchParams.delete('lang'); else u.searchParams.set('lang', lang);
+    history.replaceState(null, '', u);
+  }));
+})();
+
+// Header border on scroll + reveal-on-scroll.
+const hdr = document.getElementById('top');
+const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 8);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const els = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el => io.observe(el));
+} else { els.forEach(el => el.classList.add('in')); }
 </script>
 </body>
 </html>
