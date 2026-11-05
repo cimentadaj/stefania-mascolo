@@ -8,6 +8,10 @@
 <meta property="og:title" content="Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor">
 <meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, capacity development, leadership training · IT · EN">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://cimentadaj.github.io/stefania-mascolo/">
+<meta property="og:image" content="https://cimentadaj.github.io/stefania-mascolo/assets/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/brush.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +108,7 @@
   .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
   .portrait { position: relative; width: min(100%, 420px); aspect-ratio: 1; margin-left: auto; }
   .portrait .ph { position: absolute; inset: 9%; border-radius: 50%; }
+  .portrait .photo { position: absolute; inset: 9%; width: 82%; height: 82%; border-radius: 50%; object-fit: cover; object-position: 50% 30%; box-shadow: 0 24px 60px -24px rgba(74,53,52,.45); }
   .portrait .ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-12deg); pointer-events: none; }
   .facts { display: flex; flex-wrap: wrap; gap: 14px 38px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); font-size: .98rem; color: var(--muted); }
   .facts b { color: var(--ink); font-weight: 600; }
@@ -123,7 +128,9 @@
   /* About */
   .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
   .about-media { position: sticky; top: 110px; }
-  .about-media .ph { aspect-ratio: 4 / 5; }
+  .about-media .clip { margin: 0; position: relative; }
+  .about-media .clip::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--blush-soft); z-index: -1; }
+  .about-media video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; background: #e9e1df; }
   .about-copy h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
   .about-copy .body { margin-top: 34px; color: #2b2323; }
   .about-copy .body p:first-child { font-size: 1.28rem; color: var(--ink); }
@@ -134,7 +141,7 @@
   .timeline li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
   .timeline li span { color: var(--muted); font-variant-numeric: lining-nums; }
   .timeline li b { font-weight: 600; }
-  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-media { position: static; } .about-media .ph { aspect-ratio: 4 / 3; } }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-media { position: static; margin-right: 18px; } .about-media video { aspect-ratio: 1 / 1; } }
 
   /* Principles */
   .principles { background: var(--warm); }
@@ -170,6 +177,25 @@
   @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 44px; } }
   @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
+  /* In action */
+  .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 28px; }
+  .m-item { margin: 0; }
+  .m-item .frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9e1df; }
+  .m-item .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+  .m-item:hover .frame img { transform: scale(1.03); }
+  .m-item figcaption { margin-top: 16px; padding-left: 14px; border-left: 2px solid var(--red); font-size: .98rem; color: var(--muted); line-height: 1.5; }
+  .m-item figcaption b { color: var(--ink); font-weight: 600; }
+  .m-wide { grid-column: 1 / -1; }
+  .m-wide .frame { aspect-ratio: 2.4 / 1; }
+  .yt { cursor: pointer; }
+  .yt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,16,0) 55%, rgba(20,16,16,.35)); pointer-events: none; }
+  .yt .play { position: absolute; left: 22px; bottom: 22px; z-index: 1; width: 72px; height: 72px; border-radius: 50%; border: 0; background: var(--red); display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 34px rgba(0,0,0,.28); transition: transform .25s ease, background .25s; }
+  .yt:hover .play { transform: scale(1.08); }
+  .yt .play svg { width: 28px; height: 28px; fill: #fff; margin-left: 5px; }
+  .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt.on::after { content: none; }
+  @media (max-width: 760px) { .m-grid { grid-template-columns: 1fr; } .m-wide .frame { aspect-ratio: 16 / 10; } .yt .play { width: 58px; height: 58px; left: 14px; bottom: 14px; } }
+
   /* Insights */
   .insights { background:
       radial-gradient(circle at 100% 0%, rgba(232,148,148,.45), rgba(232,148,148,0) 40%),
@@ -178,7 +204,9 @@
   .i-grid h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
   .i-grid .tag { font-size: 1.2rem; font-style: italic; color: var(--red); margin-top: 14px; }
   .i-grid .copy p { color: #2b2323; }
-  .i-grid .ph { aspect-ratio: 16 / 10; }
+  .i-mark { position: relative; width: min(100%, 380px); aspect-ratio: 1; margin: 0 auto; }
+  .i-mark img { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(8deg); }
+  .i-mark p { position: absolute; inset: 0; margin: 0; display: grid; place-content: center; text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-style: italic; line-height: 1.3; color: var(--ink); }
   @media (max-width: 860px) { .i-grid { grid-template-columns: 1fr; } }
 
   /* Testimonials */
@@ -264,8 +292,7 @@
         </div>
       </div>
       <div class="portrait">
-        <!-- PLACEHOLDER: replace with <img src="assets/portrait.jpg" alt="Stefania Mascolo"> styled with border-radius:50% -->
-        <div class="ph" data-i18n="ph.portrait">Foto ritratto<br>quadrata · ≥ 1000 px</div>
+        <img class="photo" src="assets/img/portrait.jpg" alt="Stefania Mascolo" width="600" height="600" fetchpriority="high">
         <img class="ring" src="assets/brush.svg" alt="">
       </div>
     </div>
@@ -292,8 +319,9 @@
 <section id="about">
   <div class="wrap about-grid">
     <div class="about-media reveal">
-      <!-- PLACEHOLDER: replace with <img src="assets/workshop.jpg" alt="Stefania Mascolo"> -->
-      <div class="ph" data-i18n="ph.workshop">Foto · Stefania durante un workshop o una sessione<br>verticale 4:5 · ≥ 1200 px di altezza</div>
+      <figure class="clip">
+        <video src="assets/video/clip.mp4" poster="assets/img/clip-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Stefania Mascolo"></video>
+      </figure>
     </div>
     <div class="about-copy reveal">
       <span class="eyebrow" data-i18n="nav.about">Chi sono</span>
@@ -421,21 +449,48 @@
   </div>
 </section>
 
+<!-- IN ACTION -->
+<section id="media" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="md.eyebrow">Progetti ed eventi</span>
+      <h2 data-i18n="md.h2">In azione</h2>
+      <span class="rule"></span>
+      <p data-i18n="md.lead">Progetti europei, eventi e sessioni dal vivo con città, istituzioni e partner internazionali.</p>
+    </div>
+    <div class="m-grid">
+      <figure class="m-item reveal">
+        <div class="frame yt" data-yt="mUW2AEExl-I" data-title="Join the NEUTRALPATH City Alliance">
+          <img src="assets/img/yt.jpg" alt="Stefania Mascolo · NEUTRALPATH City Alliance" loading="lazy" width="1280" height="720">
+          <button type="button" class="play" aria-label="Play / Riproduci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
+        </div>
+        <figcaption data-i18n="md.yt"><b>NEUTRALPATH City Alliance</b> · video del progetto per città europee a impatto climatico zero</figcaption>
+      </figure>
+      <figure class="m-item reveal">
+        <div class="frame"><img src="assets/img/panel.jpg" alt="Panel NEUTRALPATH, Commissione europea" loading="lazy" width="1600" height="900"></div>
+        <figcaption data-i18n="md.panel"><b>Panel NEUTRALPATH</b> · stand della Commissione europea</figcaption>
+      </figure>
+      <figure class="m-item m-wide reveal">
+        <div class="frame"><img src="assets/img/dresden.jpg" alt="NEUTRALPATH × MOBILITIES for EU, Dresda" loading="lazy" width="2000" height="833"></div>
+        <figcaption data-i18n="md.dresden"><b>NEUTRALPATH × MOBILITIES for EU</b> · sessione a Dresda</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- INSIGHTS -->
 <section id="insights" class="insights">
   <div class="wrap i-grid">
     <div class="copy reveal">
       <span class="eyebrow" data-i18n="in.eyebrow">Sessioni live mensili gratuite</span>
       <h2>SMD Consulting INSIGHTS</h2>
-      <p class="tag">Learn. Connect. Grow.</p>
       <span class="rule"></span>
       <p style="margin-top:28px" data-i18n="in.p">Sessioni live mensili e gratuite che esplorano il lato umano delle competenze professionali, come la negoziazione e la leadership, e come muoversi tra le dinamiche professionali e la crescita organizzativa.</p>
-      <!-- PLACEHOLDER: replace # with the LinkedIn event / sign-up link -->
-      <a class="btn" href="#" style="margin-top:12px" data-i18n="in.cta">Partecipa alla prossima sessione</a>
+      <a class="btn" href="https://www.linkedin.com/in/stefania-mascolo-993086155/" target="_blank" rel="noopener" style="margin-top:12px" data-i18n="in.cta">Segui le sessioni su LinkedIn</a>
     </div>
-    <div class="reveal">
-      <!-- PLACEHOLDER: replace with <img src="assets/insights.jpg" alt="SMD Consulting INSIGHTS"> -->
-      <div class="ph" data-i18n="ph.insights">Immagine · sessione INSIGHTS o banner dell'evento<br>orizzontale 16:10 · ≥ 1400 px di larghezza</div>
+    <div class="i-mark reveal" aria-hidden="true">
+      <img src="assets/brush.svg" alt="">
+      <p>Learn.<br>Connect.<br>Grow.</p>
     </div>
   </div>
 </section>
@@ -502,7 +557,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Stefania Mascolo</span>
+    <span>© 2026 Stefania Mascolo · <a href="https://www.linkedin.com/in/stefania-mascolo-993086155/" target="_blank" rel="noopener">LinkedIn</a></span>
     <span>Senior Consultant &amp; Capacity Development Advisor</span>
   </div>
 </footer>
@@ -517,12 +572,10 @@ en: {
   "hero.h1": "An honest outside view of what is <em>holding your organisation back.</em>",
   "hero.lede": "I work with CEOs and leadership teams to bring to light what isn't working, in processes, collaboration and leadership, and to build the skills and habits that turn strategy into lasting results.",
   "hero.cta1": "Start a confidential conversation",
-  "ph.portrait": "Portrait photo<br>square · ≥ 1000 px",
   "facts.2": "<b>10 years</b> of international experience",
   "facts.3": "<b>Companies</b> &amp; public administrations",
   "st.quote": "“If there's one thing I've learned from working with people and organisations over the past decade, it's that <strong>great strategies alone don't create impact.</strong>”",
   "st.follow": "My role is to bridge that gap: helping organisations turn a shared vision into coordinated action, build effective partnerships, and develop the skills their people and teams need to deliver lasting results, while finding fulfilment in their work.",
-  "ph.workshop": "Photo · Stefania facilitating a workshop or session<br>portrait 4:5 · ≥ 1200 px tall",
   "about.h2": "Bridging strategy and the people who deliver it",
   "about.p1": "Stefania Mascolo is a consultant with ten years of international experience in strategic consulting, capability development and the coordination of organisational change.",
   "about.p2": "She works alongside companies to identify the skills that need developing and to build tailored capacity-building programmes, taking care of their design, delivery and the evaluation of results.",
@@ -571,10 +624,15 @@ en: {
   "ap.2h": "Design", "ap.2p": "Define the skills to develop and build a tailored programme around your team and priorities.",
   "ap.3h": "Deliver", "ap.3p": "Training, workshops and facilitation that put people at the centre and make change practical.",
   "ap.4h": "Evaluate &amp; embed", "ap.4p": "Measure results and turn what was learned into habits applied in everyday work.",
+  "md.eyebrow": "Projects &amp; events",
+  "md.h2": "In action",
+  "md.lead": "European projects, events and live sessions with cities, institutions and international partners.",
+  "md.yt": "<b>NEUTRALPATH City Alliance</b> · project video on driving climate-neutral cities in Europe",
+  "md.panel": "<b>NEUTRALPATH panel</b> · European Commission stand",
+  "md.dresden": "<b>NEUTRALPATH × MOBILITIES for EU</b> · session in Dresden",
   "in.eyebrow": "Free monthly live sessions",
   "in.p": "Free monthly live sessions exploring the human side of professional skills, such as negotiation and leadership, and how to navigate professional dynamics and organisational growth.",
-  "in.cta": "Join the next session",
-  "ph.insights": "Image · INSIGHTS session or event banner<br>landscape 16:10 · ≥ 1400 px wide",
+  "in.cta": "Follow the sessions on LinkedIn",
   "te.eyebrow": "Testimonials", "te.h2": "What clients say",
   "te.ph": "<b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation",
   "wk.label": "Worked with",
@@ -615,6 +673,17 @@ en: {
     history.replaceState(null, '', u);
   }));
 })();
+
+// YouTube: load the player only when clicked (no third-party requests before that).
+document.querySelectorAll('.yt').forEach(el => el.addEventListener('click', () => {
+  if (el.classList.contains('on')) return;
+  const f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + el.dataset.yt + '?autoplay=1&rel=0&modestbranding=1';
+  f.title = el.dataset.title; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+  el.classList.add('on'); el.replaceChildren(f);
+}));
+// Respect reduced-motion: keep the About clip on its poster frame.
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 
 // Header border on scroll + reveal-on-scroll.
 const hdr = document.getElementById('top');
