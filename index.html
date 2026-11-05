@@ -6,7 +6,7 @@
 <title>Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor</title>
 <meta name="description" content="Stefania Mascolo aiuta i team di leadership a vedere con chiarezza ciò che non funziona nella loro organizzazione e sviluppa le competenze, le abitudini e la fiducia necessarie per cambiarlo.">
 <meta property="og:title" content="Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor">
-<meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, capacity development, leadership training · IT · EN · ES">
+<meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, capacity development, leadership training · IT · EN">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/brush.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -225,6 +225,7 @@
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 </style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -237,10 +238,9 @@
         <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
         <li><a href="#approach" data-i18n="nav.approach">Metodo</a></li>
         <li><a href="#insights">Insights</a></li>
-        <li class="lang" role="group" aria-label="Language / Lingua / Idioma">
+        <li class="lang" role="group" aria-label="Language / Lingua">
           <button type="button" data-lang="it" lang="it" aria-label="Italiano">IT</button>
           <button type="button" data-lang="en" lang="en" aria-label="English">EN</button>
-          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
         </li>
         <li class="cta"><a class="btn" href="#contact" data-i18n="nav.cta">Contattami</a></li>
       </ul>
@@ -509,7 +509,7 @@
 </footer>
 
 <script>
-/* Translations. Italian is the default and lives in the HTML above; EN and ES are below.
+/* Translations. Italian is the default and lives in the HTML above; English is below.
    Any key missing here falls back to the Italian text. */
 const I18N = {
 en: {
@@ -583,78 +583,6 @@ en: {
   "ct.h2": "Let's explore together which approach best fits your priorities.",
   "ct.p": "Share a few lines about your organisation and what you'd like to change. Every conversation is confidential.",
   "ct.btn": "Write to me"
-},
-es: {
-  "meta.desc": "Stefania Mascolo ayuda a los equipos directivos a ver con claridad lo que no funciona en su organización y desarrolla las competencias, los hábitos y la confianza necesarios para cambiarlo.",
-  "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.approach": "Método", "nav.cta": "Contacto",
-  "hero.h1": "Una mirada externa y honesta sobre lo que <em>frena a su organización.</em>",
-  "hero.lede": "Acompaño a CEOs y equipos directivos a sacar a la luz lo que no funciona, en los procesos, la colaboración y el liderazgo, y a desarrollar las competencias y los hábitos que convierten la estrategia en resultados duraderos.",
-  "hero.cta1": "Concierte una conversación confidencial",
-  "ph.portrait": "Foto de retrato<br>cuadrada · ≥ 1000 px",
-  "facts.2": "<b>10 años</b> de experiencia internacional",
-  "facts.3": "<b>Empresas</b> y administraciones públicas",
-  "st.quote": "“Si algo he aprendido trabajando con personas y organizaciones durante la última década, es que <strong>las grandes estrategias, por sí solas, no generan impacto.</strong>”",
-  "st.follow": "Mi papel es cerrar esa brecha: ayudar a las organizaciones a convertir una visión compartida en acción coordinada, construir alianzas eficaces y desarrollar las competencias que las personas y los equipos necesitan para lograr resultados duraderos, encontrando al mismo tiempo satisfacción en su trabajo.",
-  "ph.workshop": "Foto · Stefania facilitando un taller o una sesión<br>vertical 4:5 · ≥ 1200 px de alto",
-  "about.h2": "Un puente entre la estrategia y las personas que la hacen realidad",
-  "about.p1": "Stefania Mascolo es consultora con 10 años de experiencia internacional en consultoría estratégica, desarrollo de competencias y coordinación de iniciativas de cambio organizacional.",
-  "about.p2": "Acompaña a las empresas a identificar las competencias que deben desarrollarse y a construir programas de capacity building a medida, encargándose de su diseño, su implementación y la evaluación de los resultados.",
-  "about.p3": "Diseña e imparte formación corporativa en competencias transversales y directivas, en particular negociación, comunicación eficaz, liderazgo y colaboración. Además, facilita talleres experienciales, actividades de team building y sesiones de debriefing con metodologías participativas como el storytelling, la gamificación y los ejercicios en grupo, para fomentar el diálogo, reconocer y mejorar las dinámicas individuales y de equipo y afrontar los retos del cambio organizacional.",
-  "about.p4": "Su enfoque combina experiencia consultiva y atención a las dinámicas relacionales, con el objetivo de traducir las necesidades de la organización en itinerarios de aprendizaje y nuevos hábitos de comportamiento aplicables al trabajo diario.",
-  "about.langs": "Trabaja en italiano, inglés y español",
-  "tl.h": "Experiencia seleccionada",
-  "tl.1": "<span>2026 – hoy</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milán</div>",
-  "tl.2": "<span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Bruselas</div>",
-  "tl.3": "<span>2019 – 2022</span><div><b>Consultant</b>, Change Management &amp; Learning Development · GNE Finance, Barcelona</div>",
-  "tl.4": "<span>2020 – 2022</span><div><b>Profesora</b>, Máster UNITAR en Asuntos Internacionales · Universitat Oberta de Catalunya</div>",
-  "tl.5": "<span>2017 – 2021</span><div><b>Consultant</b>, Learning Development · Asociación para las Naciones Unidas en España, Barcelona</div>",
-  "pr.eyebrow": "Cómo trabajo",
-  "pr.h2": "La confianza es la condición previa para el cambio",
-  "pr.lead": "Evaluar una organización significa escuchar lo que normalmente no se dice en voz alta. Solo funciona si todas las personas implicadas saben cómo se tratará la información.",
-  "pr.1h": "Confidencialidad ante todo",
-  "pr.1p": "Lo que surge en entrevistas y talleres se trata con discreción. Los resultados se comparten al nivel acordado al inicio y nunca se atribuyen a personas concretas sin su consentimiento.",
-  "pr.2h": "Independencia y franqueza",
-  "pr.2p": "La dirección recibe una imagen clara y basada en evidencias, también cuando resulta incómoda. El foco está en los sistemas y los comportamientos, no en buscar culpables.",
-  "pr.3h": "Construido con su equipo",
-  "pr.3p": "Las soluciones se diseñan junto a los equipos que las vivirán cada día, para que el cambio sea compartido y no impuesto.",
-  "pr.4h": "Resultados medibles",
-  "pr.4p": "Cada proyecto empieza con objetivos claros y termina con una evaluación de lo que realmente ha cambiado en el trabajo diario.",
-  "sv.h2": "Del diagnóstico a nuevas formas de trabajar",
-  "sv.lead": "Cada proyecto se diseña a medida de su organización, su equipo y sus prioridades. Presencial, online o en formato híbrido.",
-  "s1.h": "Diagnóstico organizacional",
-  "s1.p": "Un diagnóstico independiente de lo que funciona y lo que no, para equipos directivos que quieren la imagen completa antes de decidir dónde actuar.",
-  "s1.ul": "<li>Análisis de necesidades y barreras</li><li>Entrevistas y observación de equipos</li><li>Conclusiones claras y prioridades</li>",
-  "s2.h": "Gestión del cambio y adopción",
-  "s2.p": "Acompañar a los equipos en la adopción de nuevos procesos, metodologías, herramientas y formas de colaborar.",
-  "s2.ul": "<li>Implicación de los stakeholders</li><li>Facilitación del cambio</li><li>Hojas de ruta de adopción</li>",
-  "s3.h": "Formación en liderazgo y gestión",
-  "s3.p": "Programas de formación para mandos y equipos en las competencias que marcan el rendimiento diario.",
-  "s3.ul": "<li>Negociación</li><li>Comunicación eficaz</li><li>Liderazgo y colaboración</li>",
-  "s4.h": "Talleres experienciales y team building",
-  "s4.p": "Sesiones participativas que sacan a la luz las dinámicas de equipo y las convierten en compromisos compartidos.",
-  "s4.ul": "<li>Storytelling y gamificación</li><li>Simulaciones y ejercicios en grupo</li><li>Sesiones de debriefing</li>",
-  "s5.h": "Programas de capacity building",
-  "s5.p": "Diseño formativo de principio a fin: del análisis de necesidades y los objetivos a la impartición y la evaluación de resultados.",
-  "s5.ul": "<li>Macro y microdiseño</li><li>Metodologías y herramientas de aprendizaje</li><li>Evaluación del impacto</li>",
-  "s6.h": "Alianzas y programas complejos",
-  "s6.p": "Estructurar programas multiactor y financiados por la UE para que los socios estén alineados y la calidad de la ejecución se mantenga alta.",
-  "s6.ul": "<li>Arquitectura de programas</li><li>Coordinación de stakeholders</li><li>Seguimiento e informes</li>",
-  "ap.h2": "Un camino claro, de principio a fin",
-  "ap.1h": "Escuchar y analizar", "ap.1p": "Entender la organización, sus objetivos y las barreras que se interponen, mediante conversaciones a todos los niveles.",
-  "ap.2h": "Diseñar", "ap.2p": "Definir las competencias que hay que desarrollar y construir un programa a medida de su equipo y sus prioridades.",
-  "ap.3h": "Implementar", "ap.3p": "Formación, talleres y facilitación que ponen a las personas en el centro y hacen el cambio tangible.",
-  "ap.4h": "Evaluar y consolidar", "ap.4p": "Medir los resultados y convertir lo aprendido en hábitos aplicados en el trabajo diario.",
-  "in.eyebrow": "Sesiones mensuales gratuitas en directo",
-  "in.p": "Sesiones mensuales gratuitas en directo que exploran el lado humano de las competencias profesionales, como la negociación y el liderazgo, y cómo navegar las dinámicas profesionales y el crecimiento organizacional.",
-  "in.cta": "Únase a la próxima sesión",
-  "ph.insights": "Imagen · sesión INSIGHTS o banner del evento<br>horizontal 16:10 · ≥ 1400 px de ancho",
-  "te.eyebrow": "Testimonios", "te.h2": "Lo que dicen los clientes",
-  "te.ph": "<b>Testimonio (marcador)</b>Cita del cliente, 2–3 frases<br>Nombre · Cargo, Organización",
-  "wk.label": "He trabajado con",
-  "ct.eyebrow": "Contacto",
-  "ct.h2": "Exploremos juntos la solución que mejor se adapta a sus prioridades.",
-  "ct.p": "Cuénteme en pocas líneas sobre su organización y lo que le gustaría cambiar. Toda conversación es confidencial.",
-  "ct.btn": "Escríbame"
 }
 };
 
