@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor</title>
+<title>Stefania Mascolo · Change Management &amp; Leadership Advisor</title>
 <meta name="description" content="Stefania Mascolo aiuta i team di leadership a vedere con chiarezza ciò che non funziona nella loro organizzazione e sviluppa le competenze, le abitudini e la fiducia necessarie per cambiarlo.">
-<meta property="og:title" content="Stefania Mascolo · Senior Consultant &amp; Capacity Development Advisor">
-<meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, capacity development, leadership training · IT · EN">
+<meta property="og:title" content="Stefania Mascolo · Change Management &amp; Leadership Advisor">
+<meta property="og:description" content="Uno sguardo esterno e onesto su ciò che frena la vostra organizzazione · Change management, sviluppo delle competenze, formazione per team e management · IT · EN">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stefaniamascolo.com/">
-<meta property="og:image" content="https://stefaniamascolo.com/assets/img/og.jpg">
+<meta property="og:image" content="https://stefaniamascolo.com/assets/img/og-card.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/brush.svg" type="image/svg+xml">
@@ -53,13 +53,6 @@
   .section-head { margin-bottom: clamp(40px, 6vw, 64px); max-width: 720px; }
   .section-head h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
   .section-head p { color: var(--muted); margin-top: 22px; font-size: 1.15rem; }
-
-  /* Placeholders: visibly marked, to be replaced */
-  .ph {
-    border: 1.5px dashed var(--blush); background: repeating-linear-gradient(135deg, var(--blush-mist) 0 14px, #fff 14px 28px);
-    color: var(--brown); display: flex; align-items: center; justify-content: center; text-align: center;
-    font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; padding: 20px; line-height: 1.5;
-  }
 
   /* Header */
   header.top {
@@ -107,7 +100,6 @@
   .hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--muted); max-width: 560px; margin: 30px 0 40px; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
   .portrait { position: relative; width: min(100%, 420px); aspect-ratio: 1; margin-left: auto; }
-  .portrait .ph { position: absolute; inset: 9%; border-radius: 50%; }
   .portrait .photo { position: absolute; inset: 9%; width: 82%; height: 82%; border-radius: 50%; object-fit: cover; object-position: 50% 30%; box-shadow: 0 24px 60px -24px rgba(74,53,52,.45); }
   .portrait .ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-12deg); pointer-events: none; }
   .facts { display: flex; flex-wrap: wrap; gap: 14px 38px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); font-size: .98rem; color: var(--muted); }
@@ -130,7 +122,7 @@
   .about-media { position: sticky; top: 110px; }
   .about-media .clip { margin: 0; position: relative; }
   .about-media .clip::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--blush-soft); z-index: -1; }
-  .about-media video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; background: #e9e1df; }
+  .about-media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; background: #e9e1df; }
   .about-copy h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
   .about-copy .body { margin-top: 34px; color: #2b2323; }
   .about-copy .body p:first-child { font-size: 1.28rem; color: var(--ink); }
@@ -141,7 +133,7 @@
   .timeline li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
   .timeline li span { color: var(--muted); font-variant-numeric: lining-nums; }
   .timeline li b { font-weight: 600; }
-  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-media { position: static; margin-right: 18px; } .about-media video { aspect-ratio: 1 / 1; } }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-media { position: static; margin-right: 18px; } .about-media img { aspect-ratio: 1 / 1; } }
 
   /* Principles */
   .principles { background: var(--warm); }
@@ -155,8 +147,9 @@
   @media (max-width: 560px) { .p-grid { grid-template-columns: 1fr; } .p-item, .p-item + .p-item { padding: 28px 0 4px; border-left: 0; border-top: 1px solid var(--line); } .p-item:first-child { border-top: 0; } }
 
   /* Services */
-  .s-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 2px solid var(--line); }
-  .s-item { background: #fff; padding: 40px 34px 34px; transition: background .3s; position: relative; }
+  .s-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; background: var(--line); border: 2px solid var(--line); }
+  .s-item { grid-column: span 2; background: #fff; padding: 40px 34px 34px; transition: background .3s; position: relative; }
+  .s-item:nth-child(n+4) { grid-column: span 3; }
   .s-item:hover { background: var(--blush-mist); }
   .s-item .n { font-size: 2.6rem; font-weight: 400; color: var(--blush); line-height: 1; }
   .s-item h3 { font-size: 1.4rem; margin: 22px 0 14px; }
@@ -165,8 +158,16 @@
   .s-item li { padding: 4px 0 4px 18px; position: relative; }
   .s-item li::before { content: ""; position: absolute; left: 0; top: .85em; width: 8px; height: 1.5px; background: var(--red); }
   .formats { margin-top: 30px; color: var(--muted); font-size: 1rem; }
-  @media (max-width: 960px) { .s-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 960px) { .s-grid { grid-template-columns: 1fr 1fr; } .s-item, .s-item:nth-child(n+4) { grid-column: auto; } .s-item:last-child { grid-column: 1 / -1; } }
   @media (max-width: 620px) { .s-grid { grid-template-columns: 1fr; } .s-item { padding: 32px 24px 28px; } }
+
+  /* Client problems */
+  .pb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .pb-item { background: var(--blush-mist); padding: 38px 34px 30px; border-top: 3px solid var(--red); }
+  .pb-item h3 { font-size: 1.4rem; font-style: italic; font-weight: 600; margin-bottom: 16px; }
+  .pb-item p { font-size: 1rem; color: #3a3030; margin: 0; }
+  .pb-cta { margin-top: 44px; }
+  @media (max-width: 900px) { .pb-grid { grid-template-columns: 1fr; gap: 20px; } }
 
   /* Process */
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; }
@@ -181,12 +182,11 @@
   .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 28px; }
   .m-item { margin: 0; }
   .m-item .frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9e1df; }
-  .m-item .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+  .m-item .frame img, .m-item .frame video { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+  .m-item .frame video { display: block; }
   .m-item:hover .frame img { transform: scale(1.03); }
   .m-item figcaption { margin-top: 16px; padding-left: 14px; border-left: 2px solid var(--red); font-size: .98rem; color: var(--muted); line-height: 1.5; }
   .m-item figcaption b { color: var(--ink); font-weight: 600; }
-  .m-wide { grid-column: 1 / -1; }
-  .m-wide .frame { aspect-ratio: 2.4 / 1; }
   .yt { cursor: pointer; }
   .yt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,16,0) 55%, rgba(20,16,16,.35)); pointer-events: none; }
   .yt .play { position: absolute; left: 22px; bottom: 22px; z-index: 1; width: 72px; height: 72px; border-radius: 50%; border: 0; background: var(--red); display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 34px rgba(0,0,0,.28); transition: transform .25s ease, background .25s; }
@@ -194,7 +194,7 @@
   .yt .play svg { width: 28px; height: 28px; fill: #fff; margin-left: 5px; }
   .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .yt.on::after { content: none; }
-  @media (max-width: 760px) { .m-grid { grid-template-columns: 1fr; } .m-wide .frame { aspect-ratio: 16 / 10; } .yt .play { width: 58px; height: 58px; left: 14px; bottom: 14px; } }
+  @media (max-width: 760px) { .m-grid { grid-template-columns: 1fr; } .yt .play { width: 58px; height: 58px; left: 14px; bottom: 14px; } }
 
   /* Insights */
   .insights { background:
@@ -209,25 +209,14 @@
   .i-mark p { position: absolute; inset: 0; margin: 0; display: grid; place-content: center; text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-style: italic; line-height: 1.3; color: var(--ink); }
   @media (max-width: 860px) { .i-grid { grid-template-columns: 1fr; } }
 
-  /* Testimonials */
-  .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .t-item { margin: 0; padding: 40px 36px; background: var(--warm); position: relative; }
-  .t-item::before { content: "\201C"; position: absolute; top: 6px; left: 26px; font-size: 5rem; line-height: 1; color: var(--blush); }
-  .t-item blockquote { margin: 26px 0 22px; font-size: 1.15rem; font-style: italic; }
-  .t-item figcaption { font-size: .95rem; color: var(--muted); }
-  .t-item.ph { flex-direction: column; text-transform: none; letter-spacing: 0; font-size: 1rem; align-items: flex-start; text-align: left; border-radius: 0; }
-  .t-item.ph::before { content: none; }
-  .t-item.ph b { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 600; margin-bottom: 10px; }
-  @media (max-width: 760px) { .t-grid { grid-template-columns: 1fr; } }
-
   /* Logos */
-  .worked { padding-top: 0; }
   .worked .label { text-align: center; font-size: .8rem; letter-spacing: .4em; text-transform: uppercase; color: var(--muted); margin-bottom: 44px; }
   .logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px 18px; align-items: center; list-style: none; padding: 0; margin: 0; }
   .logos li { height: 92px; display: flex; align-items: center; justify-content: center; padding: 10px 12px; }
   .logos img { max-height: 54px; max-width: 150px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s; }
   .logos li:hover img { filter: none; opacity: 1; }
   .logos img.sil, .logos li:hover img.sil { filter: brightness(0); opacity: .62; }
+  .logos img.seal { max-height: 74px; }
   .logos .txt { font-size: .95rem; font-weight: 600; text-align: center; color: var(--muted); line-height: 1.25; }
   @media (max-width: 900px) { .logos { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 520px) { .logos { grid-template-columns: repeat(2, 1fr); } .logos li { height: 80px; } .logos img { max-height: 44px; max-width: 128px; } }
@@ -292,12 +281,12 @@
         </div>
       </div>
       <div class="portrait">
-        <img class="photo" src="assets/img/portrait.jpg" alt="Stefania Mascolo" width="600" height="600" fetchpriority="high">
+        <img class="photo" src="assets/img/stefania-hero.jpg" alt="Stefania Mascolo" width="800" height="800" fetchpriority="high">
         <img class="ring" src="assets/brush.svg" alt="">
       </div>
     </div>
     <div class="facts">
-      <div><b>Senior Consultant</b> &amp; Capacity Development Advisor</div>
+      <div><b>Change Management</b> &amp; Leadership Advisor</div>
       <div data-i18n="facts.2"><b>10 anni</b> di esperienza internazionale</div>
       <div data-i18n="facts.3"><b>Aziende</b> e pubbliche amministrazioni</div>
     </div>
@@ -320,7 +309,7 @@
   <div class="wrap about-grid">
     <div class="about-media reveal">
       <figure class="clip">
-        <video src="assets/video/clip.mp4" poster="assets/img/clip-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Stefania Mascolo"></video>
+        <img src="assets/img/stefania-about.jpg" alt="Stefania Mascolo" width="960" height="1200" loading="lazy">
       </figure>
     </div>
     <div class="about-copy reveal">
@@ -328,11 +317,11 @@
       <h2 data-i18n="about.h2">Un ponte tra la strategia e le persone che la realizzano</h2>
       <span class="rule"></span>
       <div class="body">
-        <p data-i18n="about.p1">Stefania Mascolo è una consulente con 10 anni di esperienza internazionale nella consulenza strategica, nello sviluppo delle competenze e nel coordinamento di iniziative relative ai processi di cambiamento organizzativo.</p>
-        <p data-i18n="about.p2">Affianca le aziende nell'individuare le competenze da sviluppare e nel costruire programmi di capacity building su misura, curandone la progettazione, la realizzazione e la valutazione dei risultati.</p>
-        <p data-i18n="about.p3">Progetta e conduce percorsi di formazione aziendale su competenze trasversali e manageriali, in particolare negoziazione, comunicazione efficace, leadership e collaborazione. Facilita inoltre workshop esperienziali, eventi di team building e sessioni di debriefing, utilizzando metodologie partecipative, tra cui storytelling, gamification ed esercitazioni di gruppo, per stimolare il confronto, riconoscere e migliorare dinamiche individuali e di gruppo ed affrontare le sfide del cambiamento organizzativo.</p>
-        <p data-i18n="about.p4">Il suo approccio unisce esperienza consulenziale e attenzione alle dinamiche relazionali, con l'obiettivo di tradurre i bisogni organizzativi in percorsi di apprendimento e nuove abitudini comportamentali da applicare nel lavoro quotidiano.</p>
-        <span class="langs" data-i18n="about.langs">Lavora in italiano, inglese e spagnolo</span>
+        <p data-i18n="about.p1">Sono una consulente con 10 anni di esperienza internazionale nella consulenza strategica, nello sviluppo delle competenze e nel coordinamento di iniziative relative ai processi di cambiamento organizzativo.</p>
+        <p data-i18n="about.p2">Affianco le aziende nell'individuare le competenze da sviluppare e nel costruire percorsi di sviluppo delle competenze su misura, curandone la progettazione, la realizzazione e la valutazione dei risultati.</p>
+        <p data-i18n="about.p3">Progetto e conduco percorsi di formazione aziendale su competenze trasversali e manageriali, in particolare negoziazione, comunicazione efficace, leadership e collaborazione. Facilito inoltre workshop esperienziali, eventi di team building e sessioni di debriefing, utilizzando metodologie partecipative, tra cui storytelling, gamification ed esercitazioni di gruppo, per stimolare il confronto, riconoscere e migliorare dinamiche individuali e di gruppo ed affrontare le sfide del cambiamento organizzativo.</p>
+        <p data-i18n="about.p4">Il mio approccio unisce esperienza consulenziale e attenzione alle dinamiche relazionali, con l'obiettivo di tradurre i bisogni organizzativi in percorsi di apprendimento e nuove abitudini comportamentali da applicare nel lavoro quotidiano.</p>
+        <span class="langs" data-i18n="about.langs">Lavoro in italiano, inglese e spagnolo</span>
       </div>
       <div class="timeline">
         <h3 data-i18n="tl.h">Esperienze selezionate</h3>
@@ -382,6 +371,32 @@
   </div>
 </section>
 
+<!-- PROBLEMS -->
+<section class="problems">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="pb.eyebrow">Quando intervengo</span>
+      <h2 data-i18n="pb.h2">Vi riconoscete in una di queste situazioni?</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="pb-grid reveal">
+      <article class="pb-item">
+        <h3 data-i18n="pb.1h">La strategia c’è, l’allineamento no.</h3>
+        <p data-i18n="pb.1p">Visione e obiettivi sono chiari, ma il team non li sente propri e l’energia si disperde. Individuo cosa si è inceppato tra leadership e team, poi vi accompagno passo dopo passo a ricostruire dialogo, fiducia e responsabilità condivise.</p>
+      </article>
+      <article class="pb-item">
+        <h3 data-i18n="pb.2h">State attraversando un cambiamento profondo.</h3>
+        <p data-i18n="pb.2p">Un nuovo vertice, una riorganizzazione, processi da ripensare. Vi affianco nel ridefinire valori, ruoli e responsabilità e nell’adottare un modello organizzativo più efficace, senza perdere le persone per strada.</p>
+      </article>
+      <article class="pb-item">
+        <h3 data-i18n="pb.3h">Per crescere servono nuove competenze.</h3>
+        <p data-i18n="pb.3p">L’organizzazione corre più veloce delle competenze del team. Individuiamo insieme i gap che contano davvero e li colmiamo con una formazione costruita sulle vostre persone e sui vostri casi reali.</p>
+      </article>
+    </div>
+    <div class="pb-cta reveal"><a class="btn" href="#contact" data-i18n="pb.cta">Parliamone</a></div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
@@ -395,38 +410,32 @@
       <article class="s-item">
         <div class="n">01</div>
         <h3 data-i18n="s1.h">Assessment organizzativo</h3>
-        <p data-i18n="s1.p">Una diagnosi indipendente di ciò che funziona e di ciò che non funziona, per i team di leadership che vogliono il quadro completo prima di decidere dove intervenire.</p>
-        <ul data-i18n="s1.ul"><li>Analisi dei bisogni e delle barriere</li><li>Interviste e osservazione dei team</li><li>Evidenze chiare e priorità</li></ul>
+        <p data-i18n="s1.p">Un quadro indipendente e riservato di cosa funziona e cosa no, per decidere dove intervenire prima di investire.</p>
+        <ul data-i18n="s1.ul"><li>Interviste con leadership e team</li><li>Osservazione delle dinamiche di lavoro</li><li>Report con evidenze e priorità d’intervento</li></ul>
       </article>
       <article class="s-item">
         <div class="n">02</div>
         <h3 data-i18n="s2.h">Change management e adozione</h3>
-        <p data-i18n="s2.p">Accompagnare i team nell'adozione di nuovi processi, metodologie, strumenti e modi di collaborare.</p>
-        <ul data-i18n="s2.ul"><li>Coinvolgimento degli stakeholder</li><li>Change enablement</li><li>Roadmap di adozione</li></ul>
+        <p data-i18n="s2.p">Nuovi processi, strumenti o modelli organizzativi funzionano solo se le persone li adottano. Vi accompagno perché il cambiamento diventi pratica e non resti sulla carta.</p>
+        <ul data-i18n="s2.ul"><li>Coinvolgimento degli stakeholder</li><li>Supporto ai team nel cambiamento</li><li>Piano di adozione con il management</li></ul>
       </article>
       <article class="s-item">
         <div class="n">03</div>
-        <h3 data-i18n="s3.h">Formazione per leadership e management</h3>
-        <p data-i18n="s3.p">Percorsi formativi per manager e team sulle competenze che determinano la performance quotidiana.</p>
-        <ul data-i18n="s3.ul"><li>Negoziazione</li><li>Comunicazione efficace</li><li>Leadership e collaborazione</li></ul>
+        <h3 data-i18n="s3.h">Formazione per team e management</h3>
+        <p data-i18n="s3.p">Percorsi per manager e team sulle competenze che fanno la differenza ogni giorno, costruiti sui vostri casi reali.</p>
+        <ul data-i18n="s3.ul"><li>Negoziazione</li><li>Comunicazione efficace</li><li>Leadership e collaborazione</li><li>Adaptability &amp; Resilience</li><li>Problem solving &amp; time management</li></ul>
       </article>
       <article class="s-item">
         <div class="n">04</div>
-        <h3 data-i18n="s4.h">Workshop esperienziali e team building</h3>
-        <p data-i18n="s4.p">Sessioni partecipative che fanno emergere le dinamiche di gruppo e le trasformano in impegni condivisi.</p>
-        <ul data-i18n="s4.ul"><li>Storytelling e gamification</li><li>Simulazioni ed esercitazioni di gruppo</li><li>Sessioni di debriefing</li></ul>
+        <h3 data-i18n="s4.h">Percorsi di sviluppo delle competenze</h3>
+        <p data-i18n="s4.p">Un singolo corso motiva per qualche giorno, un percorso cambia il modo di lavorare. Progetto programmi formativi completi: dall’analisi dei bisogni alla valutazione dei risultati.</p>
+        <ul data-i18n="s4.ul"><li>Progettazione del percorso e delle singole sessioni</li><li>Metodologie e strumenti didattici su misura</li><li>Valutazione dell’impatto</li></ul>
       </article>
       <article class="s-item">
         <div class="n">05</div>
-        <h3 data-i18n="s5.h">Programmi di capacity building</h3>
-        <p data-i18n="s5.p">Progettazione formativa end-to-end: dall'analisi dei bisogni e dagli obiettivi fino all'erogazione e alla valutazione dei risultati.</p>
-        <ul data-i18n="s5.ul"><li>Macro e micro-progettazione</li><li>Metodologie e strumenti didattici</li><li>Valutazione dell'impatto</li></ul>
-      </article>
-      <article class="s-item">
-        <div class="n">06</div>
-        <h3 data-i18n="s6.h">Partnership e programmi complessi</h3>
-        <p data-i18n="s6.p">Strutturare programmi multi-stakeholder e finanziati dall'UE perché i partner restino allineati e la qualità dei risultati resti alta.</p>
-        <ul data-i18n="s6.ul"><li>Architettura di programma</li><li>Coordinamento degli stakeholder</li><li>Monitoraggio e reporting</li></ul>
+        <h3 data-i18n="s5.h">Workshop esperienziali e team building</h3>
+        <p data-i18n="s5.p">Sessioni partecipative che fanno emergere le dinamiche di gruppo e le trasformano in impegni condivisi.</p>
+        <ul data-i18n="s5.ul"><li>Storytelling e gamification</li><li>Simulazioni ed esercitazioni di gruppo</li><li>Debriefing e piano d’azione condiviso</li></ul>
       </article>
     </div>
   </div>
@@ -460,19 +469,23 @@
     </div>
     <div class="m-grid">
       <figure class="m-item reveal">
-        <div class="frame yt" data-yt="mUW2AEExl-I" data-title="Join the NEUTRALPATH City Alliance">
-          <img src="assets/img/yt.jpg" alt="Stefania Mascolo · NEUTRALPATH City Alliance" loading="lazy" width="1280" height="720">
+        <div class="frame yt" data-yt="0Mq0N-pHUII" data-title="Capacity Building Program for Local Governments">
+          <img src="assets/img/yt-capacity.jpg" alt="Video: programma di sviluppo delle competenze per le amministrazioni locali" loading="lazy" width="1280" height="720">
           <button type="button" class="play" aria-label="Play / Riproduci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
         </div>
-        <figcaption data-i18n="md.yt"><b>NEUTRALPATH City Alliance</b> · video del progetto per città europee a impatto climatico zero</figcaption>
+        <figcaption data-i18n="md.yt"><b>Programma di sviluppo delle competenze</b> per le amministrazioni locali</figcaption>
       </figure>
       <figure class="m-item reveal">
-        <div class="frame"><img src="assets/img/panel.jpg" alt="Panel NEUTRALPATH, Commissione europea" loading="lazy" width="1600" height="900"></div>
-        <figcaption data-i18n="md.panel"><b>Panel NEUTRALPATH</b> · stand della Commissione europea</figcaption>
+        <div class="frame"><video src="assets/video/clip.mp4" poster="assets/img/clip-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Stefania Mascolo"></video></div>
+        <figcaption data-i18n="md.clip"><b>In sala</b> · facilitazione di una sessione dal vivo</figcaption>
       </figure>
-      <figure class="m-item m-wide reveal">
-        <div class="frame"><img src="assets/img/dresden.jpg" alt="NEUTRALPATH × MOBILITIES for EU, Dresda" loading="lazy" width="2000" height="833"></div>
-        <figcaption data-i18n="md.dresden"><b>NEUTRALPATH × MOBILITIES for EU</b> · sessione a Dresda</figcaption>
+      <figure class="m-item reveal">
+        <div class="frame"><img src="assets/img/panel.jpg" alt="Panel della Commissione europea sullo sviluppo delle competenze per le città europee" loading="lazy" width="1600" height="900"></div>
+        <figcaption data-i18n="md.panel"><b>Panel della Commissione europea</b> sullo sviluppo delle competenze per le città europee</figcaption>
+      </figure>
+      <figure class="m-item reveal">
+        <div class="frame"><img src="assets/img/dresden-panel.jpg" alt="Panel europeo sulle competenze per la sostenibilità nella pubblica amministrazione, Dresda" loading="lazy" width="1600" height="900"></div>
+        <figcaption data-i18n="md.dresden"><b>Moderazione</b> del panel europeo sulle competenze per la sostenibilità nella pubblica amministrazione, Dresda</figcaption>
       </figure>
     </div>
   </div>
@@ -495,23 +508,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="te.eyebrow">Testimonianze</span>
-      <h2 data-i18n="te.h2">Cosa dicono i clienti</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="t-grid reveal">
-      <!-- PLACEHOLDER testimonial. Final markup:
-      <figure class="t-item"><blockquote>“Quote…”</blockquote><figcaption><b>Name</b> · Title, Organisation</figcaption></figure> -->
-      <figure class="t-item ph" data-i18n="te.ph"><b>Testimonianza (segnaposto)</b>Citazione del cliente, 2–3 frasi<br>Nome · Ruolo, Organizzazione</figure>
-      <figure class="t-item ph" data-i18n="te.ph"><b>Testimonianza (segnaposto)</b>Citazione del cliente, 2–3 frasi<br>Nome · Ruolo, Organizzazione</figure>
-    </div>
-  </div>
-</section>
-
 <!-- WORKED WITH -->
 <section class="worked">
   <div class="wrap">
@@ -519,8 +515,12 @@
     <ul class="logos reveal">
       <!--LOGOS-->
       <li><img src="assets/logos/european-commission.svg" alt="European Commission" title="European Commission" loading="lazy"></li>
+      <li><img src="assets/logos/eib.svg" alt="European Investment Bank" title="European Investment Bank" loading="lazy"></li>
       <li><img src="assets/logos/eurocities.svg" alt="Eurocities" title="Eurocities" loading="lazy"></li>
       <li><img src="assets/logos/enea.svg" alt="ENEA" title="ENEA" loading="lazy"></li>
+      <li><img src="assets/logos/rina.svg" alt="RINA" title="RINA" loading="lazy" class="sil"></li>
+      <li><img src="assets/logos/r2m.svg" alt="R2M Solution" title="R2M Solution" loading="lazy"></li>
+      <li><img src="assets/logos/icons.svg" alt="Fondazione ICONS" title="Fondazione ICONS" loading="lazy"></li>
       <li><img src="assets/logos/barcelona.svg" alt="Ajuntament de Barcelona" title="Ajuntament de Barcelona" loading="lazy"></li>
       <li><img src="assets/logos/ghent.svg" alt="City of Ghent" title="City of Ghent" loading="lazy"></li>
       <li><img src="assets/logos/dresden.svg" alt="City of Dresden" title="City of Dresden" loading="lazy"></li>
@@ -528,10 +528,11 @@
       <li><img src="assets/logos/eivissa.png" alt="Ajuntament d&#x27;Eivissa" title="Ajuntament d&#x27;Eivissa" loading="lazy"></li>
       <li><img src="assets/logos/anue.png" alt="United Nations Association of Spain (ANUE)" title="United Nations Association of Spain (ANUE)" loading="lazy"></li>
       <li><img src="assets/logos/uoc.svg" alt="Universitat Oberta de Catalunya" title="Universitat Oberta de Catalunya" loading="lazy"></li>
+      <li><img src="assets/logos/unimi.png" alt="Università degli Studi di Milano" title="Università degli Studi di Milano" loading="lazy" class="sil seal"></li>
       <li><img src="assets/logos/eae.svg" alt="EAE Business School" title="EAE Business School" loading="lazy"></li>
       <li><img src="assets/logos/adecco.svg" alt="Adecco" title="Adecco" loading="lazy"></li>
       <li><img src="assets/logos/gne-finance.png" alt="GNE Finance" title="GNE Finance" loading="lazy" class="sil"></li>
-      <li><img src="assets/logos/digital-attitude.svg" alt="Digital Attitude" title="Digital Attitude" loading="lazy"></li>
+      <li><img src="assets/logos/digital360.svg" alt="Digital360" title="Digital360" loading="lazy"></li>
       <li><span class="txt">FormaMentis</span></li>
       <!--/LOGOS-->
     </ul>
@@ -558,7 +559,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Stefania Mascolo · <a href="https://www.linkedin.com/in/stefania-mascolo-993086155/" target="_blank" rel="noopener">LinkedIn</a></span>
-    <span>Senior Consultant &amp; Capacity Development Advisor</span>
+    <span>Change Management &amp; Leadership Advisor</span>
   </div>
 </footer>
 
@@ -577,11 +578,11 @@ en: {
   "st.quote": "“If there's one thing I've learned from working with people and organisations over the past decade, it's that <strong>great strategies alone don't create impact.</strong>”",
   "st.follow": "My role is to bridge that gap: helping organisations turn a shared vision into coordinated action, build effective partnerships, and develop the skills their people and teams need to deliver lasting results, while finding fulfilment in their work.",
   "about.h2": "Bridging strategy and the people who deliver it",
-  "about.p1": "Stefania Mascolo is a consultant with ten years of international experience in strategic consulting, capability development and the coordination of organisational change.",
-  "about.p2": "She works alongside companies to identify the skills that need developing and to build tailored capacity-building programmes, taking care of their design, delivery and the evaluation of results.",
-  "about.p3": "She designs and leads corporate training in transversal and managerial skills, in particular negotiation, effective communication, leadership and collaboration. She also facilitates experiential workshops, team-building events and debriefing sessions, using participatory methods such as storytelling, gamification and group exercises to open honest dialogue, recognise and improve individual and team dynamics, and face the challenges of organisational change.",
-  "about.p4": "Her approach combines consulting experience with close attention to relational dynamics, with one aim: to translate organisational needs into learning paths and new behavioural habits that people apply in their everyday work.",
-  "about.langs": "Works in Italian, English and Spanish",
+  "about.p1": "I am a consultant with ten years of international experience in strategic consulting, skills development and the coordination of organisational change.",
+  "about.p2": "I work alongside companies to identify the skills that need developing and to build tailored skills development programmes, taking care of their design, delivery and the evaluation of results.",
+  "about.p3": "I design and lead corporate training in transversal and managerial skills, in particular negotiation, effective communication, leadership and collaboration. I also facilitate experiential workshops, team-building events and debriefing sessions, using participatory methods such as storytelling, gamification and group exercises to open honest dialogue, recognise and improve individual and team dynamics, and face the challenges of organisational change.",
+  "about.p4": "My approach combines consulting experience with close attention to relational dynamics, with one aim: to translate organisational needs into learning paths and new behavioural habits that people apply in their everyday work.",
+  "about.langs": "I work in Italian, English and Spanish",
   "tl.h": "Selected experience",
   "tl.1": "<span>2026 – now</span><div><b>Senior Consultant</b>, Change Management &amp; Learning Development · Digital Attitude, Milan</div>",
   "tl.2": "<span>2022 – 2026</span><div><b>Senior Consultant</b>, Change Management &amp; Capacity Building · Eurocities, Brussels</div>",
@@ -601,24 +602,30 @@ en: {
   "pr.4p": "Every engagement starts with clear objectives and ends with an evaluation of what has actually changed in day-to-day work.",
   "sv.h2": "From diagnosis to new ways of working",
   "sv.lead": "Every engagement is tailored to your organisation, your team and your priorities. Delivered in person, online or hybrid.",
+  "pb.eyebrow": "When I step in",
+  "pb.h2": "Do any of these situations sound familiar?",
+  "pb.1h": "The strategy is there. The alignment isn’t.",
+  "pb.1p": "Vision and goals are clear, but the team doesn’t feel they own them and energy gets scattered. I identify what has stalled between leadership and team, then guide you step by step in rebuilding dialogue, trust and shared accountability.",
+  "pb.2h": "You are going through deep change.",
+  "pb.2p": "A new leadership, a reorganisation, processes to rethink. I support you in redefining values, roles and responsibilities and in adopting a more effective organisational model, without leaving your people behind.",
+  "pb.3h": "Growth calls for new skills.",
+  "pb.3p": "The organisation is moving faster than the team’s skills. Together we identify the gaps that really matter and close them with training built around your people and your real cases.",
+  "pb.cta": "Let’s talk",
   "s1.h": "Organisational Assessment",
-  "s1.p": "An independent diagnosis of what is and isn't working, for leadership teams who want the full picture before deciding where to act.",
-  "s1.ul": "<li>Needs and barrier analysis</li><li>Interviews and team observation</li><li>Clear findings and priorities</li>",
+  "s1.p": "An independent, confidential picture of what works and what doesn’t, so you can decide where to act before investing.",
+  "s1.ul": "<li>Interviews with leadership and teams</li><li>Observation of working dynamics</li><li>Report with findings and priorities for action</li>",
   "s2.h": "Change Management &amp; Adoption",
-  "s2.p": "Guiding teams through the adoption of new processes, methodologies, tools and ways of collaborating.",
-  "s2.ul": "<li>Stakeholder engagement</li><li>Change enablement</li><li>Adoption roadmaps</li>",
-  "s3.h": "Leadership &amp; Management Training",
-  "s3.p": "Training programmes for managers and teams on the skills that shape day-to-day performance.",
-  "s3.ul": "<li>Negotiation</li><li>Effective communication</li><li>Leadership and collaboration</li>",
-  "s4.h": "Experiential Workshops &amp; Team Building",
-  "s4.p": "Participatory sessions that surface team dynamics and turn them into shared commitments.",
-  "s4.ul": "<li>Storytelling and gamification</li><li>Simulations and group exercises</li><li>Debriefing sessions</li>",
-  "s5.h": "Capacity-Building Programmes",
-  "s5.p": "End-to-end learning design, from needs analysis and objectives to delivery and evaluation of results.",
-  "s5.ul": "<li>Macro- and micro-design</li><li>Methodologies and learning tools</li><li>Impact evaluation</li>",
-  "s6.h": "Partnerships &amp; Complex Programmes",
-  "s6.p": "Structuring multi-stakeholder and EU-funded programmes so that partners stay aligned and delivery stays high quality.",
-  "s6.ul": "<li>Programme architecture</li><li>Stakeholder coordination</li><li>Monitoring and reporting</li>",
+  "s2.p": "New processes, tools or organisational models only work if people adopt them. I guide you so that change becomes everyday practice and doesn’t stay on paper.",
+  "s2.ul": "<li>Stakeholder engagement</li><li>Supporting teams through change</li><li>Adoption plan with management</li>",
+  "s3.h": "Training for Teams &amp; Management",
+  "s3.p": "Programmes for managers and teams on the skills that make a difference every day, built around your real cases.",
+  "s3.ul": "<li>Negotiation</li><li>Effective communication</li><li>Leadership and collaboration</li><li>Adaptability &amp; Resilience</li><li>Problem solving &amp; time management</li>",
+  "s4.h": "Skills Development Programmes",
+  "s4.p": "A single course motivates for a few days; a programme changes the way people work. I design complete learning programmes, from needs analysis to the evaluation of results.",
+  "s4.ul": "<li>Design of the programme and of each session</li><li>Tailored methodologies and learning tools</li><li>Impact evaluation</li>",
+  "s5.h": "Experiential Workshops &amp; Team Building",
+  "s5.p": "Participatory sessions that surface team dynamics and turn them into shared commitments.",
+  "s5.ul": "<li>Storytelling and gamification</li><li>Simulations and group exercises</li><li>Debriefing and shared action plan</li>",
   "ap.h2": "A clear path, end to end",
   "ap.1h": "Listen &amp; assess", "ap.1p": "Understand the organisation, its goals and the barriers in the way, through conversations at every level.",
   "ap.2h": "Design", "ap.2p": "Define the skills to develop and build a tailored programme around your team and priorities.",
@@ -627,14 +634,13 @@ en: {
   "md.eyebrow": "Projects &amp; events",
   "md.h2": "In action",
   "md.lead": "European projects, events and live sessions with cities, institutions and international partners.",
-  "md.yt": "<b>NEUTRALPATH City Alliance</b> · project video on driving climate-neutral cities in Europe",
-  "md.panel": "<b>NEUTRALPATH panel</b> · European Commission stand",
-  "md.dresden": "<b>NEUTRALPATH × MOBILITIES for EU</b> · session in Dresden",
+  "md.yt": "<b>Capacity Building Program for Local Governments</b>",
+  "md.clip": "<b>In the room</b> · facilitating a live session",
+  "md.panel": "<b>Panel European Commission</b> on Capacity Building for European Cities",
+  "md.dresden": "<b>Moderation</b> in European Panel on Sustainability Skills in public administration in Dresden",
   "in.eyebrow": "Free monthly live sessions",
   "in.p": "Free monthly live sessions exploring the human side of professional skills, such as negotiation and leadership, and how to navigate professional dynamics and organisational growth.",
   "in.cta": "Follow the sessions on LinkedIn",
-  "te.eyebrow": "Testimonials", "te.h2": "What clients say",
-  "te.ph": "<b>Testimonial placeholder</b>Client quote, 2–3 sentences<br>Name · Title, Organisation",
   "wk.label": "Worked with",
   "ct.eyebrow": "Get in touch",
   "ct.h2": "Let's explore together which approach best fits your priorities.",
